@@ -1,0 +1,2473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1085</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>720</y>
+      <width>1921</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <kerning>false</kerning>
+     </font>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QTableView" name="tableView_weighbridge"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <layout class="QGridLayout" name="gridLayout_10">
+      <item row="0" column="0">
+       <widget class="QTableWidget" name="tableWidget_RowSand">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <layout class="QGridLayout" name="gridLayout_11">
+      <item row="0" column="0">
+       <widget class="QTableWidget" name="tableWidget_Pickling">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>1901</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_12">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing">
+      <number>10</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>1号酸洗罐</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0" rowspan="4">
+           <widget class="RulerBar" name="rulerBar1_Read_2" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_31">
+            <item>
+             <widget class="QLabel" name="label_SofaValue1">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>进沙发阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_Sandinlet1">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_UpperAcidValue1">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_LowerAcidValue1">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_16">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_UpperWaterValue1">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_17">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_LowerWaterValue1">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_19">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_SandDischargeValue1">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排沙阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_21">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="label_AcidDischargeValue1">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_14">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>2号酸洗罐</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="0" column="0" rowspan="4">
+           <widget class="RulerBar" name="rulerBar1_Read_3" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_34">
+            <item>
+             <widget class="QLabel" name="label_SofaValue1_2">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>进沙发阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_Sandinlet1_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QLabel" name="label_UpperAcidValue1_2">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_18">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QLabel" name="label_LowerAcidValue1_2">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_20">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <widget class="QLabel" name="label_UpperWaterValue1_2">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_23">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <widget class="QLabel" name="label_LowerWaterValue1_2">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_24">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_19">
+            <item>
+             <widget class="QLabel" name="label_SandDischargeValue1_2">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排沙阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_25">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <widget class="QLabel" name="label_AcidDischargeValue1_2">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_26">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>3号酸洗罐</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0" rowspan="4">
+           <widget class="RulerBar" name="rulerBar1_Read_4" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_41">
+            <item>
+             <widget class="QLabel" name="label_SofaValue1_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>进沙发阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_Sandinlet1_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_22">
+            <item>
+             <widget class="QLabel" name="label_UpperAcidValue1_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_28">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_23">
+            <item>
+             <widget class="QLabel" name="label_LowerAcidValue1_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_29">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_25">
+            <item>
+             <widget class="QLabel" name="label_UpperWaterValue1_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_30">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_26">
+            <item>
+             <widget class="QLabel" name="label_LowerWaterValue1_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_31">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_28">
+            <item>
+             <widget class="QLabel" name="label_SandDischargeValue1_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排沙阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_32">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_29">
+            <item>
+             <widget class="QLabel" name="label_AcidDischargeValue1_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_33">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>4号酸洗罐</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="0" column="0" rowspan="4">
+           <widget class="RulerBar" name="rulerBar1_Read_5" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_56">
+            <item>
+             <widget class="QLabel" name="label_SofaValue1_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>进沙发阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_Sandinlet1_4">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_47">
+            <item>
+             <widget class="QLabel" name="label_UpperAcidValue1_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_35">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_48">
+            <item>
+             <widget class="QLabel" name="label_LowerAcidValue1_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_36">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_50">
+            <item>
+             <widget class="QLabel" name="label_UpperWaterValue1_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>上进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_37">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_51">
+            <item>
+             <widget class="QLabel" name="label_LowerWaterValue1_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>下进水阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_38">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_53">
+            <item>
+             <widget class="QLabel" name="label_SandDischargeValue1_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排沙阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_39">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_54">
+            <item>
+             <widget class="QLabel" name="label_AcidDischargeValue1_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>排酸阀门开关</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_40">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/ValveSwitch_Open1.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>1901</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,1">
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>皮带秤重量</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QLabel" name="label_BeltScaleWeight">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:36pt;
+    color:#222222;
+    font-weight:bold;
+    qproperty-alignment:AlignCenter;
+    background-color:#ffffff;   /* 背景设为白色 */
+}</string>
+              </property>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:12pt;
+    color:#888888;
+    font-weight:normal;
+    background-color:#ffffff;
+    qproperty-alignment:AlignCenter;
+}</string>
+              </property>
+              <property name="text">
+               <string>吨/小时</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>氢氧酸罐</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_LiquidLevelgauge">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:36pt;
+    color:#222222;
+    font-weight:bold;
+    qproperty-alignment:AlignCenter;
+    background-color:#ffffff;   /* 背景设为白色 */
+}</string>
+              </property>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_65">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:12pt;
+    color:#888888;
+    font-weight:normal;
+    background-color:#ffffff;
+    qproperty-alignment:AlignCenter;
+}</string>
+              </property>
+              <property name="text">
+               <string>pH</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>回酸罐</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_TemperatureH">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:36pt;
+    color:#222222;
+    font-weight:bold;
+    qproperty-alignment:AlignCenter;
+    background-color:#ffffff;   /* 背景设为白色 */
+}</string>
+              </property>
+              <property name="text">
+               <string>25.3</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_83">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:12pt;
+    color:#888888;
+    font-weight:normal;
+    background-color:#ffffff;
+    qproperty-alignment:AlignCenter;
+}</string>
+              </property>
+              <property name="text">
+               <string>℃</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_9">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>石墨换热器</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_15">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_42">
+            <item>
+             <widget class="QLabel" name="label_ImportedSteamValue">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>进口蒸汽压力值</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_41">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_SteamValueE">
+              <property name="styleSheet">
+               <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:13pt;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+              </property>
+              <property name="text">
+               <string>23℃</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_43">
+            <item>
+             <widget class="QLabel" name="label_QuletLiquidTemp">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>出口温度液体值</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_42">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_TemperatureE">
+              <property name="styleSheet">
+               <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:13pt;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+              </property>
+              <property name="text">
+               <string>5%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_44">
+            <item>
+             <widget class="QLabel" name="label_CondensateS">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>冷凝水PH值</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_43">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_Condensate">
+              <property name="styleSheet">
+               <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:13pt;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+              </property>
+              <property name="text">
+               <string>8%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 0;               
+    padding-top: 28px;           
+    font-weight: 500;     
+    background-color: #ffffff;
+    font-size: 18pt;
+}
+
+QGroupBox::title {
+    subcontrol-origin: padding; 
+    subcontrol-position: top center;  /* ✅ 改为居中（原来是 top left） */
+    /* left: 8px; */                  /* ❌ 删除或注释此行 */
+    top: 4px;
+      
+    font-family: &quot;Microsoft YaHei&quot;;  
+}</string>
+         </property>
+         <property name="title">
+          <string>燃气锅炉</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_14">
+          <item row="3" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_40">
+            <item>
+             <widget class="QLabel" name="label_88">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>天然气压力值</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_39">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_NaturalValueG">
+              <property name="styleSheet">
+               <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:13pt;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+              </property>
+              <property name="text">
+               <string>8%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_38">
+            <item>
+             <widget class="QLabel" name="label_86">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>温度值</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_37">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_TemperatureG">
+              <property name="styleSheet">
+               <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:13pt;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+              </property>
+              <property name="text">
+               <string>23℃</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_39">
+            <item>
+             <widget class="QLabel" name="label_87">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>出口蒸汽压力值</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_38">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_SteamValueG">
+              <property name="styleSheet">
+               <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:13pt;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+              </property>
+              <property name="text">
+               <string>5%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_37">
+            <item>
+             <widget class="QLabel" name="label_84">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:12pt;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+              </property>
+              <property name="text">
+               <string>运行状态</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_RunningStatus">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>71</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: transparent;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="res.qrc">:/image/image/OperationStatusOpen.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>stackedWidget</zorder>
+   <zorder>groupBox_10</zorder>
+  </widget>
+  <action name="action_laboratory">
+   <property name="text">
+    <string>化验室</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>RulerBar</class>
+   <extends>QWidget</extends>
+   <header>rulerbar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

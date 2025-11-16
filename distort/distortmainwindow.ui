@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DisTortMainWindow</class>
+ <widget class="QDialog" name="DisTortMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1190</width>
+    <height>232</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" columnstretch="1,1,1,1,1">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>15</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    margin-top:0;               
+    padding-top:28px;           
+    font-weight:500;     
+    background-color:#ffffff;
+   font-size: 24px;
+}
+QGroupBox::title{
+    subcontrol-origin: padding; 
+    subcontrol-position: top left;
+    left:8px;
+    top:4px;
+      
+    font-family:&quot;Microsoft YaHei&quot;;  
+}</string>
+     </property>
+     <property name="title">
+      <string>皮带秤重量</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_BeltScaleWeight">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:48px;
+    color:#222222;
+    font-weight:bold;
+    qproperty-alignment:AlignCenter;
+    background-color:#ffffff;   /* 背景设为白色 */
+}</string>
+          </property>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:16px;
+    color:#888888;
+    font-weight:normal;
+    background-color:#ffffff;
+    qproperty-alignment:AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>吨/小时</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    margin-top:0;               
+    padding-top:28px;           
+    font-weight:500;     
+    background-color:#ffffff;
+   font-size: 24px;
+}
+QGroupBox::title{
+    subcontrol-origin: padding; 
+    subcontrol-position: top left;
+    left:8px;
+    top:4px;
+      
+    font-family:&quot;Microsoft YaHei&quot;;  
+}</string>
+     </property>
+     <property name="title">
+      <string>氢氧酸罐</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_LiquidLevelgauge">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:48px;
+    color:#222222;
+    font-weight:bold;
+    qproperty-alignment:AlignCenter;
+    background-color:#ffffff;   /* 背景设为白色 */
+}</string>
+          </property>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_65">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:16px;
+    color:#888888;
+    font-weight:normal;
+    background-color:#ffffff;
+    qproperty-alignment:AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>pH</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    margin-top:0;               
+    padding-top:28px;           
+    font-weight:500;     
+    background-color:#ffffff;
+   font-size: 24px;
+}
+QGroupBox::title{
+    subcontrol-origin: padding; 
+    subcontrol-position: top left;
+    left:8px;
+    top:4px;
+      
+    font-family:&quot;Microsoft YaHei&quot;;  
+}</string>
+     </property>
+     <property name="title">
+      <string>回酸罐</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <widget class="QLabel" name="label_TemperatureH">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:48px;
+    color:#222222;
+    font-weight:bold;
+    qproperty-alignment:AlignCenter;
+    background-color:#ffffff;   /* 背景设为白色 */
+}</string>
+          </property>
+          <property name="text">
+           <string>25.3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_83">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;Microsoft YaHei&quot;;
+    font-size:16px;
+    color:#888888;
+    font-weight:normal;
+    background-color:#ffffff;
+    qproperty-alignment:AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>℃</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QGroupBox" name="groupBox_9">
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    margin-top:0;               
+    padding-top:28px;           
+    font-weight:500;     
+    background-color:#ffffff;
+   font-size: 24px;
+}
+QGroupBox::title{
+    subcontrol-origin: padding; 
+    subcontrol-position: top left;
+    left:8px;
+    top:4px;
+      
+    font-family:&quot;Microsoft YaHei&quot;;  
+}</string>
+     </property>
+     <property name="title">
+      <string>石墨换热器</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_15">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_42">
+        <item>
+         <widget class="QLabel" name="label_ImportedSteamValue">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:16px;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+          </property>
+          <property name="text">
+           <string>进口蒸汽压力值</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_41">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_SteamValueE">
+          <property name="styleSheet">
+           <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:18px;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+          </property>
+          <property name="text">
+           <string>23℃</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_43">
+        <item>
+         <widget class="QLabel" name="label_QuletLiquidTemp">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:16px;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+          </property>
+          <property name="text">
+           <string>出口温度液体值</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_42">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_TemperatureE">
+          <property name="styleSheet">
+           <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:18px;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+          </property>
+          <property name="text">
+           <string>5%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_44">
+        <item>
+         <widget class="QLabel" name="label_CondensateS">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:16px;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+          </property>
+          <property name="text">
+           <string>冷凝水PH值</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_43">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_Condensate">
+          <property name="styleSheet">
+           <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:18px;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+          </property>
+          <property name="text">
+           <string>8%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QGroupBox" name="groupBox_8">
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    margin-top:0;               
+    padding-top:28px;           
+    font-weight:500;     
+    background-color:#ffffff;
+   font-size: 24px;
+}
+QGroupBox::title{
+    subcontrol-origin: padding; 
+    subcontrol-position: top left;
+    left:8px;
+    top:4px;
+      
+    font-family:&quot;Microsoft YaHei&quot;;  
+}</string>
+     </property>
+     <property name="title">
+      <string>燃气锅炉</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_14">
+      <item row="3" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_40">
+        <item>
+         <widget class="QLabel" name="label_88">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:16px;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+          </property>
+          <property name="text">
+           <string>天然气压力值</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_39">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_NaturalValueG">
+          <property name="styleSheet">
+           <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:18px;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+          </property>
+          <property name="text">
+           <string>8%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_38">
+        <item>
+         <widget class="QLabel" name="label_86">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:16px;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+          </property>
+          <property name="text">
+           <string>温度值</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_37">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_TemperatureG">
+          <property name="styleSheet">
+           <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:18px;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+          </property>
+          <property name="text">
+           <string>23℃</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_39">
+        <item>
+         <widget class="QLabel" name="label_87">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:16px;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+          </property>
+          <property name="text">
+           <string>出口蒸汽压力值</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_38">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_SteamValueG">
+          <property name="styleSheet">
+           <string notr="true">
+ QLabel{
+        font-family:PingFang SC Medium;
+        font-size:18px;
+        color:#333333;
+        background:transparent;
+        qproperty-alignment:AlignCenter;
+    }</string>
+          </property>
+          <property name="text">
+           <string>5%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_37">
+        <item>
+         <widget class="QLabel" name="label_84">
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+    font-family:&quot;PingFang SC Medium&quot;;
+    font-size:16px;
+    background:transparent;
+    /* 注意：qproperty-alignment 在样式表中无效，需代码里 setAlignment(Qt::AlignCenter) */
+}</string>
+          </property>
+          <property name="text">
+           <string>运行状态</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_RunningStatus">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>41</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>71</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background: transparent;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="../res.qrc">:/image/image/OperationStatusOpen.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

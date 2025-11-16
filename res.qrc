@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>Value_Close.png</file>
+        <file>Value_Open.png</file>
+        <file>Value1_Close.png</file>
+        <file>Value1_Open.png</file>
+        <file>motor.png</file>
+        <file>water_channel.png</file>
+        <file>image/ValueSwitch_Open.png</file>
+        <file>image/ValveSwitch_Close1.png</file>
+        <file>image/ValveSwitch_Open1.png</file>
+        <file>image/OperationStatusClose.png</file>
+        <file>image/OperationStatusOpen.png</file>
+    </qresource>
+</RCC>

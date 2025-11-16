@@ -1,0 +1,382 @@
+2025-09-21 12:47:33.722 Debug: 原始值 (大端): 0x 14080000
+2025-09-21 12:47:33.738 Debug: Qt函数转换:    0x 814
+2025-09-21 12:47:33.739 Debug: 转换出来的浮点数 2.89789e-42
+2025-09-21 12:47:33.739 Warning: 需要至少3个屏幕，当前只有 1 个屏幕可用
+2025-09-21 12:47:34.204 Debug: true
+2025-09-21 12:47:34.945 Warning: setGeometry: Unable to set geometry 1979x1040+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1924x1040+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 1385x1032, maximum size: 16777215x16777215).
+2025-09-21 12:47:35.109 Debug: true
+2025-09-21 12:47:35.126 Debug: true
+2025-09-21 12:47:35.197 Debug: Fetched 2 SensorData
+2025-09-21 12:47:35.198 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:47:35.330 Debug: Fetched 4 Rawproducts
+2025-09-21 12:47:38.288 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:47:38.503 Debug: Fetched 10 Picked products
+2025-09-21 12:47:41.367 Debug: Fetched 2 SensorData
+2025-09-21 12:47:41.395 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:47:41.675 Debug: Fetched 4 Rawproducts
+2025-09-21 12:47:44.477 Debug: Fetched 2 SensorData
+2025-09-21 12:47:44.477 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:47:44.873 Debug: Fetched 10 Picked products
+2025-09-21 12:47:47.569 Debug: Fetched 2 SensorData
+2025-09-21 12:47:48.059 Debug: Fetched 4 Rawproducts
+2025-09-21 12:47:50.778 Debug: Fetched 2 SensorData
+2025-09-21 12:47:51.389 Debug: Fetched 10 Picked products
+2025-09-21 12:47:53.865 Debug: Fetched 2 SensorData
+2025-09-21 12:47:54.583 Debug: Fetched 4 Rawproducts
+2025-09-21 12:47:56.947 Debug: Fetched 2 SensorData
+2025-09-21 12:47:57.760 Debug: Fetched 10 Picked products
+2025-09-21 12:48:00.048 Debug: Fetched 2 SensorData
+2025-09-21 12:48:00.724 Debug: Database connection error: "[Microsoft][SQL Server Native Client 11.0]TCP Provider: 由于目标计算机积极拒绝，无法连接。\r\n [Microsoft][SQL Server Native Client 11.0]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. [Microsoft][SQL Server Native Client 11.0]Login timeout expired QODBC3: Unable to connect"
+2025-09-21 12:48:00.763 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:00.777 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:00.792 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:00.816 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:00.834 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:00.945 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:03.140 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:04.129 Debug: Fetched 10 Picked products
+2025-09-21 12:48:06.217 Debug: Fetched 2 SensorData
+2025-09-21 12:48:07.321 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:09.306 Debug: Fetched 2 SensorData
+2025-09-21 12:48:10.500 Debug: Fetched 10 Picked products
+2025-09-21 12:48:12.397 Debug: Fetched 2 SensorData
+2025-09-21 12:48:13.686 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:15.481 Debug: Fetched 2 SensorData
+2025-09-21 12:48:16.861 Debug: Fetched 10 Picked products
+2025-09-21 12:48:18.569 Debug: Fetched 2 SensorData
+2025-09-21 12:48:20.043 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:20.614 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][SQL Server Native Client 11.0]TCP Provider: 由于目标计算机积极拒绝，无法连接。\r\n [Microsoft][SQL Server Native Client 11.0]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. [Microsoft][SQL Server Native Client 11.0]Login timeout expired QODBC3: Unable to connect"
+2025-09-21 12:48:21.674 Debug: Fetched 2 SensorData
+2025-09-21 12:48:23.289 Debug: Fetched 10 Picked products
+2025-09-21 12:48:24.754 Debug: Fetched 2 SensorData
+2025-09-21 12:48:26.485 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:27.835 Debug: Fetched 2 SensorData
+2025-09-21 12:48:29.664 Debug: Fetched 10 Picked products
+2025-09-21 12:48:30.919 Debug: Fetched 2 SensorData
+2025-09-21 12:48:32.864 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:33.995 Debug: Fetched 2 SensorData
+2025-09-21 12:48:36.058 Debug: Fetched 10 Picked products
+2025-09-21 12:48:36.354 Debug: Database connection error: "[Microsoft][SQL Server Native Client 11.0]TCP Provider: 由于目标计算机积极拒绝，无法连接。\r\n [Microsoft][SQL Server Native Client 11.0]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. [Microsoft][SQL Server Native Client 11.0]Login timeout expired QODBC3: Unable to connect"
+2025-09-21 12:48:36.374 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.391 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.411 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.428 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.446 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.457 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.475 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.494 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.511 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:36.525 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:37.080 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:39.327 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:40.236 Debug: Fetched 2 SensorData
+2025-09-21 12:48:40.236 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:42.527 Debug: Fetched 10 Picked products
+2025-09-21 12:48:43.326 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:48:45.699 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:46.467 Debug: Fetched 2 SensorData
+2025-09-21 12:48:48.887 Debug: Fetched 10 Picked products
+2025-09-21 12:48:49.657 Debug: Fetched 2 SensorData
+2025-09-21 12:48:52.094 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:52.745 Debug: Fetched 2 SensorData
+2025-09-21 12:48:55.488 Debug: Fetched 10 Picked products
+2025-09-21 12:48:55.930 Debug: Fetched 2 SensorData
+2025-09-21 12:48:58.668 Debug: Fetched 4 Rawproducts
+2025-09-21 12:48:59.353 Debug: Fetched 2 SensorData
+2025-09-21 12:49:00.678 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][SQL Server Native Client 11.0]TCP Provider: 由于目标计算机积极拒绝，无法连接。\r\n [Microsoft][SQL Server Native Client 11.0]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. [Microsoft][SQL Server Native Client 11.0]Login timeout expired QODBC3: Unable to connect"
+2025-09-21 12:49:01.878 Debug: Fetched 10 Picked products
+2025-09-21 12:49:02.436 Debug: Fetched 2 SensorData
+2025-09-21 12:49:05.216 Debug: Fetched 4 Rawproducts
+2025-09-21 12:49:05.519 Debug: Fetched 2 SensorData
+2025-09-21 12:49:35.822 Debug: 原始值 (大端): 0x 14080000
+2025-09-21 12:49:35.824 Debug: Qt函数转换:    0x 814
+2025-09-21 12:49:35.825 Debug: 转换出来的浮点数 2.89789e-42
+2025-09-21 12:49:35.825 Warning: 需要至少3个屏幕，当前只有 1 个屏幕可用
+2025-09-21 12:49:36.221 Debug: true
+2025-09-21 12:49:36.859 Warning: setGeometry: Unable to set geometry 1979x1040+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1924x1040+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 1385x1032, maximum size: 16777215x16777215).
+2025-09-21 12:49:37.008 Debug: true
+2025-09-21 12:49:37.013 Debug: true
+2025-09-21 12:49:37.082 Debug: Fetched 2 SensorData
+2025-09-21 12:49:37.082 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:49:37.217 Debug: Fetched 4 Rawproducts
+2025-09-21 12:49:40.168 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:49:40.387 Debug: Fetched 10 Picked products
+2025-09-21 12:49:43.256 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:49:43.557 Debug: Fetched 4 Rawproducts
+2025-09-21 12:49:46.340 Debug: Fetched 2 SensorData
+2025-09-21 12:49:46.341 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:49:46.724 Debug: Fetched 10 Picked products
+2025-09-21 12:49:49.427 Debug: Fetched 2 SensorData
+2025-09-21 12:49:49.905 Debug: Fetched 4 Rawproducts
+2025-09-21 12:49:52.503 Debug: Fetched 2 SensorData
+2025-09-21 12:49:53.078 Debug: Fetched 10 Picked products
+2025-09-21 12:49:55.597 Debug: Fetched 2 SensorData
+2025-09-21 12:49:56.251 Debug: Fetched 4 Rawproducts
+2025-09-21 12:49:58.687 Debug: Fetched 2 SensorData
+2025-09-21 12:49:59.427 Debug: Fetched 10 Picked products
+2025-09-21 12:50:01.781 Debug: Fetched 2 SensorData
+2025-09-21 12:50:02.600 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]TCP 提供程序: 由于目标计算机积极拒绝，无法连接。\r\n [Microsoft][ODBC Driver 17 for SQL Server]与 SQL Server 建立连接时发生了与网络相关的或特定于实例的错误。找不到或无法访问服务器。请检查实例名称是否正确以及 SQL Server 是否配置为允许远程连接。有关详细信息，请参阅 SQL Server 联机丛书。 [Microsoft][ODBC Driver 17 for SQL Server]登录超时已过期 QODBC3: Unable to connect"
+2025-09-21 12:50:02.619 Debug: Fetched 4 Rawproducts
+2025-09-21 12:50:02.619 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:50:02.651 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:50:02.676 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:50:02.690 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:50:02.706 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:50:04.868 Debug: Fetched 2 SensorData
+2025-09-21 12:50:04.868 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:50:05.809 Debug: Fetched 10 Picked products
+2025-09-21 12:50:07.976 Debug: Fetched 2 SensorData
+2025-09-21 12:50:08.988 Debug: Fetched 4 Rawproducts
+2025-09-21 12:50:11.073 Debug: Fetched 2 SensorData
+2025-09-21 12:50:12.169 Debug: Fetched 10 Picked products
+2025-09-21 12:50:14.154 Debug: Fetched 2 SensorData
+2025-09-21 12:50:15.337 Debug: Fetched 4 Rawproducts
+2025-09-21 12:50:17.235 Debug: Fetched 2 SensorData
+2025-09-21 12:51:16.990 Debug: 原始值 (大端): 0x 14080000
+2025-09-21 12:51:16.991 Debug: Qt函数转换:    0x 814
+2025-09-21 12:51:16.991 Debug: 转换出来的浮点数 2.89789e-42
+2025-09-21 12:51:16.992 Warning: 需要至少3个屏幕，当前只有 1 个屏幕可用
+2025-09-21 12:51:17.337 Debug: true
+2025-09-21 12:51:17.999 Warning: setGeometry: Unable to set geometry 1979x1040+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1924x1040+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 1385x1032, maximum size: 16777215x16777215).
+2025-09-21 12:51:18.141 Debug: true
+2025-09-21 12:51:18.156 Debug: true
+2025-09-21 12:51:18.312 Debug: Fetched 4 Rawproducts
+2025-09-21 12:51:18.360 Debug: Fetched 2 SensorData
+2025-09-21 12:51:18.361 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:21.462 Debug: Fetched 10 Picked products
+2025-09-21 12:51:21.503 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:24.647 Debug: Fetched 4 Rawproducts
+2025-09-21 12:51:24.686 Debug: Fetched 2 SensorData
+2025-09-21 12:51:24.686 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:27.780 Debug: Fetched 2 SensorData
+2025-09-21 12:51:27.780 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:27.984 Debug: Fetched 10 Picked products
+2025-09-21 12:51:30.866 Debug: Fetched 2 SensorData
+2025-09-21 12:51:31.154 Debug: Fetched 4 Rawproducts
+2025-09-21 12:51:33.966 Debug: Fetched 2 SensorData
+2025-09-21 12:51:34.325 Debug: Fetched 10 Picked products
+2025-09-21 12:51:37.051 Debug: Fetched 2 SensorData
+2025-09-21 12:51:37.495 Debug: Fetched 4 Rawproducts
+2025-09-21 12:51:40.139 Debug: Fetched 2 SensorData
+2025-09-21 12:51:40.656 Debug: Fetched 10 Picked products
+2025-09-21 12:51:43.236 Debug: Fetched 2 SensorData
+2025-09-21 12:51:43.811 Debug: Fetched 4 Rawproducts
+2025-09-21 12:51:45.772 Debug: Database connection error: "[Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server 不存在或访问被拒绝 [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). QODBC3: Unable to connect"
+2025-09-21 12:51:45.813 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:45.826 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:45.845 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:45.858 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:45.878 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:51:46.320 Debug: Fetched 2 SensorData
+2025-09-21 12:51:46.982 Debug: Fetched 10 Picked products
+2025-09-21 12:51:49.409 Debug: Fetched 2 SensorData
+2025-09-21 12:51:50.137 Debug: Fetched 4 Rawproducts
+2025-09-21 12:51:52.521 Debug: Fetched 2 SensorData
+2025-09-21 12:51:53.307 Debug: Fetched 10 Picked products
+2025-09-21 12:51:55.631 Debug: Fetched 2 SensorData
+2025-09-21 12:51:56.475 Debug: Fetched 4 Rawproducts
+2025-09-21 12:51:58.714 Debug: Fetched 2 SensorData
+2025-09-21 12:51:59.635 Debug: Fetched 10 Picked products
+2025-09-21 12:52:01.801 Debug: Fetched 2 SensorData
+2025-09-21 12:52:02.789 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:04.305 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server 不存在或访问被拒绝 [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). QODBC3: Unable to connect"
+2025-09-21 12:52:04.887 Debug: Fetched 2 SensorData
+2025-09-21 12:52:05.942 Debug: Fetched 10 Picked products
+2025-09-21 12:52:07.977 Debug: Fetched 2 SensorData
+2025-09-21 12:52:09.102 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:11.066 Debug: Fetched 2 SensorData
+2025-09-21 12:52:12.274 Debug: Fetched 10 Picked products
+2025-09-21 12:52:14.164 Debug: Fetched 2 SensorData
+2025-09-21 12:52:15.451 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:17.255 Debug: Fetched 2 SensorData
+2025-09-21 12:52:18.607 Debug: Fetched 10 Picked products
+2025-09-21 12:52:20.350 Debug: Fetched 2 SensorData
+2025-09-21 12:52:21.757 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:22.069 Debug: Database connection error: "[Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server 不存在或访问被拒绝 [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). QODBC3: Unable to connect"
+2025-09-21 12:52:22.098 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.119 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.128 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.145 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.155 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.173 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.184 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.202 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.212 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.230 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.243 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:22.259 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:23.443 Debug: Fetched 2 SensorData
+2025-09-21 12:52:23.443 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:24.917 Debug: Fetched 10 Picked products
+2025-09-21 12:52:26.526 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:52:28.069 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:29.631 Debug: Fetched 2 SensorData
+2025-09-21 12:52:31.242 Debug: Fetched 10 Picked products
+2025-09-21 12:52:32.720 Debug: Fetched 2 SensorData
+2025-09-21 12:52:34.397 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:35.807 Debug: Fetched 2 SensorData
+2025-09-21 12:52:37.547 Debug: Fetched 10 Picked products
+2025-09-21 12:52:38.887 Debug: Fetched 2 SensorData
+2025-09-21 12:52:40.707 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:41.983 Debug: Fetched 2 SensorData
+2025-09-21 12:52:43.861 Debug: Fetched 10 Picked products
+2025-09-21 12:52:45.061 Debug: Fetched 2 SensorData
+2025-09-21 12:52:45.724 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server 不存在或访问被拒绝 [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). QODBC3: Unable to connect"
+2025-09-21 12:52:47.016 Debug: Fetched 4 Rawproducts
+2025-09-21 12:52:48.174 Debug: Fetched 2 SensorData
+2025-09-21 12:52:50.178 Debug: Fetched 10 Picked products
+2025-09-21 12:52:51.255 Debug: Fetched 2 SensorData
+2025-09-21 12:53:00.000 Debug: 原始值 (大端): 0x 14080000
+2025-09-21 12:53:00.001 Debug: Qt函数转换:    0x 814
+2025-09-21 12:53:00.001 Debug: 转换出来的浮点数 2.89789e-42
+2025-09-21 12:53:00.001 Warning: 需要至少3个屏幕，当前只有 1 个屏幕可用
+2025-09-21 12:53:00.389 Debug: true
+2025-09-21 12:53:01.090 Warning: setGeometry: Unable to set geometry 1979x1040+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1924x1040+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 1385x1032, maximum size: 16777215x16777215).
+2025-09-21 12:53:01.224 Debug: true
+2025-09-21 12:53:01.250 Debug: true
+2025-09-21 12:53:01.394 Debug: Fetched 4 Rawproducts
+2025-09-21 12:53:01.434 Debug: Fetched 2 SensorData
+2025-09-21 12:53:01.434 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:04.568 Debug: Fetched 10 Picked products
+2025-09-21 12:53:04.607 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:07.741 Debug: Fetched 4 Rawproducts
+2025-09-21 12:53:07.780 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:10.895 Debug: Fetched 10 Picked products
+2025-09-21 12:53:10.936 Debug: Fetched 2 SensorData
+2025-09-21 12:53:10.936 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:11.087 Debug: Successfully connected to database:
+2025-09-21 12:53:14.066 Debug: Fetched 4 Rawproducts
+2025-09-21 12:53:14.105 Debug: Fetched 2 SensorData
+2025-09-21 12:53:14.106 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:17.303 Debug: Fetched 10 Picked products
+2025-09-21 12:53:17.349 Debug: Fetched 2 SensorData
+2025-09-21 12:53:17.356 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:20.486 Debug: Fetched 4 Rawproducts
+2025-09-21 12:53:20.542 Debug: Fetched 2 SensorData
+2025-09-21 12:53:20.543 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:23.733 Debug: Fetched 10 Picked products
+2025-09-21 12:53:23.772 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:26.884 Debug: Fetched 4 Rawproducts
+2025-09-21 12:53:26.934 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:30.034 Debug: Fetched 10 Picked products
+2025-09-21 12:53:30.075 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:33.189 Debug: Fetched 4 Rawproducts
+2025-09-21 12:53:33.231 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 12:53:36.350 Debug: Fetched 10 Picked products
+2025-09-21 12:53:36.390 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:38:49.062 Debug: 原始值 (大端): 0x 14080000
+2025-09-21 13:38:49.063 Debug: Qt函数转换:    0x 814
+2025-09-21 13:38:49.063 Debug: 转换出来的浮点数 2.89789e-42
+2025-09-21 13:38:49.063 Warning: 需要至少3个屏幕，当前只有 1 个屏幕可用
+2025-09-21 13:38:49.697 Debug: true
+2025-09-21 13:38:50.337 Warning: setGeometry: Unable to set geometry 1979x1040+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1924x1040+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 1385x1032, maximum size: 16777215x16777215).
+2025-09-21 13:38:50.531 Debug: true
+2025-09-21 13:38:50.694 Debug: Fetched 4 Rawproducts
+2025-09-21 13:38:50.735 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:38:53.875 Debug: Fetched 10 Picked products
+2025-09-21 13:38:53.915 Debug: Fetched 2 SensorData
+2025-09-21 13:38:53.915 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:38:57.042 Debug: Fetched 4 Rawproducts
+2025-09-21 13:38:57.085 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:39:00.258 Debug: Fetched 10 Picked products
+2025-09-21 13:39:00.302 Debug: Fetched 2 SensorData
+2025-09-21 13:39:00.347 Debug: Successfully connected to database:
+2025-09-21 13:39:00.348 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:39:03.434 Debug: Fetched 4 Rawproducts
+2025-09-21 13:39:03.479 Debug: Fetched 2 SensorData
+2025-09-21 13:39:03.480 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:39:06.606 Debug: Fetched 10 Picked products
+2025-09-21 13:39:06.646 Debug: Fetched 2 SensorData
+2025-09-21 13:39:06.655 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:39:09.782 Debug: Fetched 4 Rawproducts
+2025-09-21 13:39:09.824 Debug: Fetched 2 SensorData
+2025-09-21 13:39:09.825 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:39:12.958 Debug: Fetched 10 Picked products
+2025-09-21 13:39:13.009 Debug: Fetched 2 SensorData
+2025-09-21 13:39:13.011 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:10.350 Debug: 原始值 (大端): 0x 14080000
+2025-09-21 13:45:10.351 Debug: Qt函数转换:    0x 814
+2025-09-21 13:45:10.351 Debug: 转换出来的浮点数 2.89789e-42
+2025-09-21 13:45:10.352 Warning: 需要至少3个屏幕，当前只有 1 个屏幕可用
+2025-09-21 13:45:10.797 Debug: true
+2025-09-21 13:45:11.406 Warning: setGeometry: Unable to set geometry 1979x1040+8+31 on QWidgetWindow/'MainWindowWindow'. Resulting geometry:  1924x1040+8+31 (frame: 8, 31, 8, 8, custom margin: 0, 0, 0, 0, minimum size: 1385x1032, maximum size: 16777215x16777215).
+2025-09-21 13:45:11.575 Debug: true
+2025-09-21 13:45:11.605 Debug: true
+2025-09-21 13:45:11.661 Debug: Fetched 2 SensorData
+2025-09-21 13:45:11.662 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:11.809 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:14.756 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:14.986 Debug: Fetched 10 Picked products
+2025-09-21 13:45:17.844 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:18.168 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:20.939 Debug: Fetched 2 SensorData
+2025-09-21 13:45:20.940 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:21.344 Debug: Fetched 10 Picked products
+2025-09-21 13:45:21.419 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:45:24.059 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:24.540 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:27.140 Debug: Fetched 2 SensorData
+2025-09-21 13:45:27.140 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:27.740 Debug: Fetched 10 Picked products
+2025-09-21 13:45:30.233 Debug: Fetched 2 SensorData
+2025-09-21 13:45:30.233 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:30.959 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:31.391 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:45:31.395 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:45:33.318 Debug: Fetched 2 SensorData
+2025-09-21 13:45:33.318 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:34.136 Debug: Fetched 10 Picked products
+2025-09-21 13:45:36.410 Debug: Fetched 2 SensorData
+2025-09-21 13:45:36.410 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:37.324 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:39.498 Debug: Fetched 2 SensorData
+2025-09-21 13:45:39.498 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:40.507 Debug: Fetched 10 Picked products
+2025-09-21 13:45:41.397 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:45:41.401 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:45:42.587 Debug: Fetched 2 SensorData
+2025-09-21 13:45:42.587 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:43.694 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:45.681 Debug: Fetched 2 SensorData
+2025-09-21 13:45:45.681 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:46.880 Debug: Fetched 10 Picked products
+2025-09-21 13:45:48.767 Debug: Fetched 2 SensorData
+2025-09-21 13:45:48.767 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:50.068 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:51.399 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:45:51.404 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:45:51.881 Debug: Fetched 2 SensorData
+2025-09-21 13:45:51.881 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:53.290 Debug: Fetched 10 Picked products
+2025-09-21 13:45:54.968 Debug: Fetched 2 SensorData
+2025-09-21 13:45:54.968 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:56.471 Debug: Fetched 4 Rawproducts
+2025-09-21 13:45:58.062 Debug: Fetched 2 SensorData
+2025-09-21 13:45:58.063 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:45:59.689 Debug: Fetched 10 Picked products
+2025-09-21 13:46:01.170 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:46:01.387 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:46:01.392 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:46:02.873 Debug: Fetched 4 Rawproducts
+2025-09-21 13:46:04.270 Debug: Fetched 2 SensorData
+2025-09-21 13:46:04.270 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:46:06.049 Debug: Fetched 10 Picked products
+2025-09-21 13:46:07.369 Debug: Fetched 2 SensorData
+2025-09-21 13:46:07.369 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:46:09.243 Debug: Fetched 4 Rawproducts
+2025-09-21 13:46:10.453 Debug: Fetched 2 SensorData
+2025-09-21 13:46:10.453 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:46:11.396 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:46:11.400 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:46:12.433 Debug: Fetched 10 Picked products
+2025-09-21 13:46:13.560 Debug: Fetched 2 SensorData
+2025-09-21 13:46:13.560 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:46:15.622 Debug: Fetched 4 Rawproducts
+2025-09-21 13:46:16.655 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:46:18.811 Debug: Fetched 10 Picked products
+2025-09-21 13:46:19.759 Debug: Fetched 2 SensorData
+2025-09-21 13:46:19.759 Debug: "锅炉房 液温计" 1.04743e+06
+2025-09-21 13:46:21.394 Warning: QSqlDatabasePrivate::database: unable to open database: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:46:21.399 Debug: Database connection error: "[Microsoft][ODBC Driver 17 for SQL Server]为连接字符串属性 'TrustServerCertificate' 指定的值无效 QODBC3: Unable to connect"
+2025-09-21 13:46:22.012 Debug: Fetched 4 Rawproducts
+2025-09-21 13:46:22.841 Debug: "锅炉房 液温计" 1.04743e+06

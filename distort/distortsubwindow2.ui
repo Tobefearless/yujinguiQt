@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DistortsubWindow2</class>
+ <widget class="QDialog" name="DistortsubWindow2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1004</width>
+    <height>653</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <kerning>false</kerning>
+      </font>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QTableView" name="tableView_weighbridge"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <layout class="QGridLayout" name="gridLayout_10">
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="tableWidget_RowSand">
+         <property name="styleSheet">
+          <string notr="true">QTableCornerButton::section{background-color:#d1dff0;}
+QTableView
+{
+
+	background-color: rgba(255, 255, 255, 0); 
+	font:14px &quot;微软雅黑&quot;;
+	color:#677483;
+	gridline-color: #ccddf0;
+}
+ 
+QTableView::item
+{	
+	font:16px &quot;微软雅黑&quot;;
+	color:#000000;
+	gridline-color: #ccddf0; 
+}
+ 
+QTableView::item:selected
+{	
+	color:#677483;
+}
+ 
+QHeaderView::section {	
+	color: black;
+	font:bold 14px &quot;微软雅黑&quot;;
+	text-align:center;
+	height:32px;
+	width :25px;
+	background-color: #d1dff0;
+	border:1px solid #8faac9;
+	border-left:none;
+
+}
+ 
+// border-left:none;防止中间表头的border重叠
+QHeaderView::section:first 
+{
+	border-left:1px solid #8faac9;
+}
+
+
+</string>
+         </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <layout class="QGridLayout" name="gridLayout_11">
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="tableWidget_Pickling">
+         <property name="styleSheet">
+          <string notr="true">QTableCornerButton::section{background-color:#d1dff0;}
+QTableView
+{
+
+	background-color: rgba(255, 255, 255, 0); 
+	font:14px &quot;微软雅黑&quot;;
+	color:#677483;
+	gridline-color: #ccddf0;
+}
+ 
+QTableView::item
+{	
+	font:16px &quot;微软雅黑&quot;;
+	color:#000000;
+	gridline-color: #ccddf0; 
+}
+ 
+QTableView::item:selected
+{	
+	color:#677483;
+}
+ 
+QHeaderView::section {	
+	color: black;
+	font:bold 14px &quot;微软雅黑&quot;;
+	text-align:center;
+	height:32px;
+	width :25px;
+	background-color: #d1dff0;
+	border:1px solid #8faac9;
+	border-left:none;
+
+}
+ 
+// border-left:none;防止中间表头的border重叠
+QHeaderView::section:first 
+{
+	border-left:1px solid #8faac9;
+}
+
+
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
