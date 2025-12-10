@@ -55,3 +55,53 @@ float bigEndianToFloat(quint32 raw)
 
     return f;
 }
+
+float extractFloatFromBeWordSwapped(const QByteArray &data, int offset) {
+    if (offset + 4 > data.size()) {
+        qWarning() << "偏移量超出数据范围:" << offset;
+        return std::numeric_limits<float>::quiet_NaN();
+    }
+
+    const unsigned char *b = reinterpret_cast<const unsigned char*>(data.constData() + offset);
+
+    // 大端序-字节交换转换：B0 B1 B2 B3 -> B1 B0 B3 B2
+    quint32 wordSwappedInt = (quint32(b[1]) << 24)
+                             | (quint32(b[0]) << 16)
+                             | (quint32(b[3]) << 8)
+                             | quint32(b[2]);
+
+    float result;
+    std::memcpy(&result, &wordSwappedInt, sizeof(result));
+    return result;
+}
+
+// 主解析函数：将十六进制字符串转换为ProcessVariables结构体
+ProcessVariables parseProcessVariables(const QString &hexString) {
+    ProcessVariables vars{0,0,0,0,0,0};
+
+    // 清理字符串（移除空格、换行等）
+    QString cleanHex = hexString.simplified().remove(' ');
+
+    // 验证长度：6个float × 4字节 × 2字符 = 48字符
+    if (cleanHex.length() != 48) {
+        qWarning() << "无效的十六进制字符串长度:" << cleanHex.length() << "应为48";
+        return vars;
+    }
+
+    // 转换为字节数组
+    QByteArray byteData = QByteArray::fromHex(cleanHex.toUtf8());
+    if (byteData.size() != 24) {
+        qWarning() << "十六进制解码失败，期望24字节，实际:" << byteData.size();
+        return vars;
+    }
+
+    // 按顺序解析每个变量
+    vars.pumpOutletPressure        = extractFloatFromBeWordSwapped(byteData, 0);
+    vars.hydrofluoricAcidTankLevel = extractFloatFromBeWordSwapped(byteData, 4);
+    vars.reactor1Temperature       = extractFloatFromBeWordSwapped(byteData, 8);
+    vars.reactor2Temperature       = extractFloatFromBeWordSwapped(byteData, 12);
+    vars.reactor3Temperature       = extractFloatFromBeWordSwapped(byteData, 16);
+    vars.reactor4Temperature       = extractFloatFromBeWordSwapped(byteData, 20);
+
+    return vars;
+}

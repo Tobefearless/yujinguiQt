@@ -214,7 +214,7 @@ bool MySQLDatabase::open(const QString connnectname)
        m_db = QSqlDatabase::addDatabase("QMYSQL",connnectname);
        m_db.setHostName("1.14.26.239");
        m_db.setPort(3306);
-       m_db.setDatabaseName("user");
+       m_db.setDatabaseName("yujingui");
        m_db.setUserName("root");
        m_db.setPassword("czy123456");
        m_db.setConnectOptions("MYSQL_OPT_RECONNECT=1;");
@@ -236,7 +236,7 @@ bool MySQLDatabase::toDB()
 {
     QString   sql;
     bool result;
-    sql = QString("SELECT * from `toapp` ");
+    sql = QString("SELECT * from `test2` ");
     QSqlQuery  query(m_db);
     result = query.exec(sql);
 
@@ -296,6 +296,120 @@ bool MySQLDatabase::getLatestRawProducts(QList<RawInspectionRow> &products, int 
             products.append(inspection);
         }
 
+        return true;
+}
+
+bool MySQLDatabase::getLatestWeighRecords(QList<WeighRecordViewType> &records, int limit)
+{
+    records.clear();
+
+    if (!m_db.isOpen()) {
+        qWarning() << "Database not connected";
+        return false;
+    }
+
+    QString sql = R"(
+        SELECT *
+        FROM (
+            SELECT
+                *
+            FROM yujingui.weighrecordview
+            ORDER BY WeighTime DESC
+            LIMIT :limit
+        ) AS t
+        ORDER BY WeighTime ASC   -- 外层再翻回正序
+    )";
+
+    QSqlQuery query;
+    query.prepare(sql);
+    query.bindValue(":limit", limit);   // int limit = 50 等
+
+    if (!query.exec()) {
+        qCritical() << "Failed to fetch weigh records:" << query.lastError().text();
+        return false;
+    }
+
+    while (query.next()) {
+        WeighRecordViewType record;
+
+        // 从查询结果填充结构体
+        record.RunningNum = query.value("RunningNum").toString();
+        record.Licenseplate = query.value("Licenseplate").toString();
+        record.Driver = query.value("Driver").toString();
+        record.BusinessType = query.value("BusinessType").toString();
+        record.CustomerName = query.value("CustomerName").toString();
+        record.SupplierName = query.value("SupplierName").toString();
+        record.ProductName = query.value("ProductName").toString();
+        record.TotalWeight = query.value("TotalWeight").toDouble();
+        record.Tare = query.value("Tare").toDouble();
+        record.Buckle = query.value("Buckle").toDouble();
+        record.NeatWeight = query.value("NeatWeight").toDouble();
+        record.WeighTime = query.value("WeighTime").toDateTime();
+        record.SendcorpName = query.value("SendcorpName").toString();
+        record.RecvcorpName = query.value("RecvcorpName").toString();
+
+        records.append(record);
+    }
+
+    qInfo() << "Successfully fetched" << records.size() << "weigh records";
+    return true;
+}
+
+bool MySQLDatabase::getTodayWeighRecords(QList<WeighRecordViewType> &records, int limit)
+{
+    records.clear();
+
+        if (!m_db.isOpen()) {
+            qWarning() << "Database not connected";
+            return false;
+        }
+
+        // 获取当前日期，格式化为 yyyyMMdd
+        QDate currentDate = QDate::currentDate();
+        QString todayStr = currentDate.toString("yyyyMMdd");
+
+        // 构建 LIKE 查询模式：今天日期开头的所有记录
+        QString datePattern = todayStr + "%";
+
+        QSqlQuery query(m_db);
+        query.prepare(R"(
+            SELECT *
+            FROM `yujingui`.`weighrecordview`
+            WHERE `RunningNum` LIKE :datePattern
+            ORDER BY `RunningNum` DESC
+            LIMIT :limit
+        )");
+        query.bindValue(":datePattern", datePattern);
+        query.bindValue(":limit", limit);
+
+        if (!query.exec()) {
+            qCritical() << "Failed to fetch today's weigh records:" << query.lastError().text();
+            return false;
+        }
+
+        while (query.next()) {
+            WeighRecordViewType record;
+
+            // 从查询结果填充结构体
+            record.RunningNum = query.value("RunningNum").toString();
+            record.Licenseplate = query.value("Licenseplate").toString();
+            record.Driver = query.value("Driver").toString();
+            record.BusinessType = query.value("BusinessType").toString();
+            record.CustomerName = query.value("CustomerName").toString();
+            record.SupplierName = query.value("SupplierName").toString();
+            record.ProductName = query.value("ProductName").toString();
+            record.TotalWeight = query.value("TotalWeight").toDouble();
+            record.Tare = query.value("Tare").toDouble();
+            record.Buckle = query.value("Buckle").toDouble();
+            record.NeatWeight = query.value("NeatWeight").toDouble();
+            record.WeighTime = query.value("WeighTime").toDateTime();
+            record.SendcorpName = query.value("SendcorpName").toString();
+            record.RecvcorpName = query.value("RecvcorpName").toString();
+
+            records.append(record);
+        }
+
+        qInfo() << "Successfully fetched" << records.size() << "today's weigh records (Date:" << todayStr << ")";
         return true;
 }
 

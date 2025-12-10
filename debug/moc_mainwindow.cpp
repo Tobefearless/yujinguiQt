@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[14];
-    char stringdata0[232];
+    QByteArrayData data[13];
+    char stringdata0[234];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,9 +43,8 @@ QT_MOC_LITERAL(7, 106, 23), // "QList<RawInspectionRow>"
 QT_MOC_LITERAL(8, 130, 16), // "updateSensorData"
 QT_MOC_LITERAL(9, 147, 22), // "QList<SensorData_Type>"
 QT_MOC_LITERAL(10, 170, 21), // "updateWeighbridgeData"
-QT_MOC_LITERAL(11, 192, 15), // "QSqlQueryModel*"
-QT_MOC_LITERAL(12, 208, 8), // "newModel"
-QT_MOC_LITERAL(13, 217, 14) // "startKeepAlive"
+QT_MOC_LITERAL(11, 192, 26), // "QList<WeighRecordViewType>"
+QT_MOC_LITERAL(12, 219, 14) // "startKeepAlive"
 
     },
     "MainWindow\0startThread\0\0"
@@ -53,8 +52,8 @@ QT_MOC_LITERAL(13, 217, 14) // "startKeepAlive"
     "QList<pickedProduct_Type>\0products\0"
     "updateRawInspectTable\0QList<RawInspectionRow>\0"
     "updateSensorData\0QList<SensorData_Type>\0"
-    "updateWeighbridgeData\0QSqlQueryModel*\0"
-    "newModel\0startKeepAlive"
+    "updateWeighbridgeData\0QList<WeighRecordViewType>\0"
+    "startKeepAlive"
 };
 #undef QT_MOC_LITERAL
 
@@ -79,7 +78,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,    1,   48,    2, 0x08 /* Private */,
        8,    1,   51,    2, 0x08 /* Private */,
       10,    1,   54,    2, 0x08 /* Private */,
-      13,    0,   57,    2, 0x08 /* Private */,
+      12,    0,   57,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -88,7 +87,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, 0x80000000 | 4,    5,
     QMetaType::Void, 0x80000000 | 7,    5,
     QMetaType::Void, 0x80000000 | 9,    5,
-    QMetaType::Void, 0x80000000 | 11,   12,
+    QMetaType::Void, 0x80000000 | 11,    5,
     QMetaType::Void,
 
        0        // eod
@@ -104,7 +103,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->updatePickedProductTable((*reinterpret_cast< const QList<pickedProduct_Type>(*)>(_a[1]))); break;
         case 2: _t->updateRawInspectTable((*reinterpret_cast< const QList<RawInspectionRow>(*)>(_a[1]))); break;
         case 3: _t->updateSensorData((*reinterpret_cast< const QList<SensorData_Type>(*)>(_a[1]))); break;
-        case 4: _t->updateWeighbridgeData((*reinterpret_cast< QSqlQueryModel*(*)>(_a[1]))); break;
+        case 4: _t->updateWeighbridgeData((*reinterpret_cast< const QList<WeighRecordViewType>(*)>(_a[1]))); break;
         case 5: _t->startKeepAlive(); break;
         default: ;
         }
@@ -136,7 +135,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QSqlQueryModel* >(); break;
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<WeighRecordViewType> >(); break;
             }
             break;
         }

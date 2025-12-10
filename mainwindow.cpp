@@ -19,8 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     buttonFlag = false;
     m_oldModel = nullptr;
 
-    initDB();
-
+//    initDB();
     myT = new DatabaseWorker();
     thread = new QThread(this);
     myT->moveToThread(thread);
@@ -34,8 +33,8 @@ MainWindow::MainWindow(QWidget *parent) :
     weighbridgeT->moveToThread(weighbridgeThread);
 
     m_keepAliveTimer = new QTimer(this);
-    spreadsheet.initPickProductTable(ui->tableWidget_Pickling);
-    spreadsheet.initRawSandTable(ui->tableWidget_RowSand);
+
+    initTableWidget();
 
     connect(myT,SIGNAL(RawInspectcdataReady(QList<RawInspectionRow>)),
             this,SLOT(updateRawInspectTable(QList<RawInspectionRow>)),
@@ -50,8 +49,8 @@ MainWindow::MainWindow(QWidget *parent) :
             this,SLOT(updateSensorData(QList<SensorData_Type>)),
             Qt::QueuedConnection);
 
-    connect(weighbridgeT,SIGNAL(WeighbridgeDataReady(QSqlQueryModel*)),
-            this,SLOT(updateWeighbridgeData(QSqlQueryModel*)));
+    connect(weighbridgeT,SIGNAL(weighbridgeDataReady(QList<WeighRecordViewType>)),
+            this,SLOT(updateWeighbridgeData(QList<WeighRecordViewType>)));
 
     connect(this,&MainWindow::startThread,myT,&DatabaseWorker::fetchLatestPickedProductData);//启动线程
     connect(this,&MainWindow::startThread,sensorT,&DatabaseWorker::fetchSensorData);//启动线程
@@ -68,26 +67,31 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowTitle("工业控制监控系统");
     emit startThread();
 
-//    ui->statusBar->showMessage("双击切换全屏/最大化");
 
+
+    ui->verticalLayout_9->setAlignment(ui->label_RunningStatus, Qt::AlignHCenter);
+    initAllWidgetStretch();
 }
 
 MainWindow::~MainWindow()
 {
     m_keepAliveTimer->stop();
     if( thread->isRunning() == true ){
+        myT->stop();
         thread->requestInterruption();
         thread->quit();
         thread->wait();
     }
 
     if( sensorThread->isRunning() == true ){
+        sensorT->stop();
         sensorThread->requestInterruption();
         sensorThread->quit();
         sensorThread->wait();
     }
 
     if( weighbridgeThread->isRunning() == true ){
+        weighbridgeT->stop();
         weighbridgeThread->requestInterruption();
         weighbridgeThread->quit();
         weighbridgeThread->wait();
@@ -107,6 +111,13 @@ bool MainWindow::initDB()
 {
     MySQLDatabase* db = MySQLDatabase::instance();
     return db->open("QMainWindow");
+}
+
+void MainWindow::initTableWidget()
+{
+    spreadsheet.initPickProductTable(ui->tableWidget_Pickling);
+    spreadsheet.initRawSandTable(ui->tableWidget_RowSand);
+    spreadsheet.initWeighRecordTable(ui->tableWidget_weighbridge);
 }
 
 void MainWindow::configureTableView(QTableView *tableView)
@@ -213,208 +224,210 @@ void MainWindow::setValveParameters(QString str)
     char *rcv = temp.data();
     memcpy((char*)&plvValueStatus,rcv,sizeof(PLCValveStatus));
     //1号反应罐进沙阀门开关
-    QString openPic = ":/image/image/ValveSwitch_Open1.png";
-    QString closePic = ":/image/image/ValveSwitch_Close1.png";
+    QString openPic = ":/image/image/ValveSwitch_OpenG1.png";
+    QString closePic = ":/image/image/ValveSwitch_CloseG1.png";
+
     if( plvValueStatus.R1_SandInletOpen){
-        loadImageForLabel(ui->label_SofaValue1,openPic);
-    }else if( plvValueStatus.R1_SandInletClose){
-        loadImageForLabel(ui->label_SofaValue1,closePic);
+        loadImageForLabel(ui->lbl_R1_HighSandA1_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R1_HighSandA1_SW,closePic);
     }
 
     //2号反应罐进沙阀门开关
     if( plvValueStatus.R2_SandInletOpen){
-        loadImageForLabel(ui->label_SofaValue1_2,openPic);
-    }else if( plvValueStatus.R2_SandInletClose){
-        loadImageForLabel(ui->label_SofaValue1_2,closePic);
+        loadImageForLabel(ui->lbl_R2_HighSandA2_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R2_HighSandA2_SW,closePic);
     }
 
     //3号反应罐进沙阀门开关
     if( plvValueStatus.R3_SandInletOpen){
-        loadImageForLabel(ui->label_SofaValue1_3,openPic);
-    }else if( plvValueStatus.R3_SandInletClose){
-        loadImageForLabel(ui->label_SofaValue1_3,closePic);
+        loadImageForLabel(ui->lbl_R3_HighSandA3_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R3_HighSandA3_SW,closePic);
     }
 
     //4号反应罐进沙阀门开关
     if( plvValueStatus.R4_SandInletOpen){
-        loadImageForLabel(ui->label_SofaValue1_4,openPic);
-    }else if( plvValueStatus.R4_SandInletClose){
-        loadImageForLabel(ui->label_SofaValue1_4,closePic);
+        loadImageForLabel(ui->lbl_R4_HighSandA4_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R4_HighSandA4_SW,closePic);
     }
 
     //1号上进酸阀门
     if( plvValueStatus.R1_HighAcidA12Open){
-        loadImageForLabel(ui->label_UpperAcidValue1,openPic);
-    }else if( plvValueStatus.R1_HighAcidA12Closed){
-        loadImageForLabel(ui->label_UpperAcidValue1,closePic);
+        loadImageForLabel(ui->lbl_R1_HighAcidA12_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R1_HighAcidA12_SW,closePic);
     }
 
     //2号上进酸阀门
     if( plvValueStatus.R2_HighAcidA22Open){
-        loadImageForLabel(ui->label_UpperAcidValue1_2,openPic);
-    }else if( plvValueStatus.R2_HighAcidA22Closed){
-        loadImageForLabel(ui->label_UpperAcidValue1_2,closePic);
+        loadImageForLabel(ui->lbl_R2_HighAcidA22_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R2_HighAcidA22_SW,closePic);
     }
 
     //3号上进酸阀门
     if( plvValueStatus.R3_HighAcidA32Open){
-        loadImageForLabel(ui->label_UpperAcidValue1_3,openPic);
-    }else if( plvValueStatus.R3_HighAcidA32Close){
-        loadImageForLabel(ui->label_UpperAcidValue1_3,closePic);
+        loadImageForLabel(ui->lbl_R3_HighAcidA32_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R3_HighAcidA32_SW,closePic);
     }
 
     //4号上进酸阀门
     if( plvValueStatus.R4_HighAcidA42Open){
-        loadImageForLabel(ui->label_UpperAcidValue1_4,openPic);
-    }else if( plvValueStatus.R4_HighAcidA42Close){
-        loadImageForLabel(ui->label_UpperAcidValue1_4,closePic);
+        loadImageForLabel(ui->lbl_R4_HighAcidA42_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R4_HighAcidA42_SW,closePic);
     }
 
     //1号下进酸阀门
     if( plvValueStatus.R1_LowAcidA13Open){
-        loadImageForLabel(ui->label_LowerAcidValue1,openPic);
-    }else if( plvValueStatus.R1_LowAcidA13Closed){
-        loadImageForLabel(ui->label_LowerAcidValue1,closePic);
+        loadImageForLabel(ui->lbl_R1_LowAcidA13_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R1_LowAcidA13_SW,closePic);
     }
 
     //2号下进酸阀门
     if( plvValueStatus.R2_LowAcidA23Open){
-        loadImageForLabel(ui->label_LowerAcidValue1_2,openPic);
-    }else if( plvValueStatus.R2_LowAcidA23Close){
-        loadImageForLabel(ui->label_LowerAcidValue1_2,closePic);
+        loadImageForLabel(ui->lbl_R2_LowAcidA23_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R2_LowAcidA23_SW,closePic);
     }
 
     //3号下进酸阀门
     if( plvValueStatus.R3_LowAcidA33Open){
-        loadImageForLabel(ui->label_LowerAcidValue1_3,openPic);
-    }else if( plvValueStatus.R3_LowAcidA33Close){
-        loadImageForLabel(ui->label_LowerAcidValue1_3,closePic);
+        loadImageForLabel(ui->lbl_R3_LowAcidA33_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R3_LowAcidA33_SW,closePic);
     }
 
     //4号下进酸阀门
     if( plvValueStatus.R4_LowAcidA43Open){
-        loadImageForLabel(ui->label_LowerAcidValue1_4,openPic);
-    }else if( plvValueStatus.R4_LowAcidA43Close){
-        loadImageForLabel(ui->label_LowerAcidValue1_4,closePic);
+        loadImageForLabel(ui->lbl_R4_LowAcidA43_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R4_LowAcidA43_SW,closePic);
     }
 
     //1号上进水阀门开关
     if( plvValueStatus.R1_HighWaterB13Open){
-        loadImageForLabel(ui->label_UpperWaterValue1,openPic);
-    }else if( plvValueStatus.R1_HighWaterB13Closed){
-        loadImageForLabel(ui->label_UpperWaterValue1,closePic);
+        loadImageForLabel(ui->lbl_R1_HighWaterB13_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R1_HighWaterB13_SW,closePic);
     }
 
     //2号上进水阀门开关
     if( plvValueStatus.R2_HighWaterB23Open){
-        loadImageForLabel(ui->label_UpperWaterValue1_2,openPic);
-    }else if( plvValueStatus.R2_HighWaterB23Closed){
-        loadImageForLabel(ui->label_UpperWaterValue1_2,closePic);
+        loadImageForLabel(ui->lbl_R2_HighWaterB23_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R2_HighWaterB23_SW,closePic);
     }
 
     //3号上进水阀门开关
     if( plvValueStatus.R3_HighWaterB33Open){
-        loadImageForLabel(ui->label_UpperWaterValue1_3,openPic);
-    }else if( plvValueStatus.R3_HighWaterB33Close){
-        loadImageForLabel(ui->label_UpperWaterValue1_3,closePic);
+        loadImageForLabel(ui->lbl_R3_HighWaterB33_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R3_HighWaterB33_SW,closePic);
     }
 
     //4号上进水阀门开关
     if( plvValueStatus.R4_HighWaterB43Open){
-        loadImageForLabel(ui->label_UpperWaterValue1_4,openPic);
-    }else if( plvValueStatus.R4_HighWaterB43Close){
-        loadImageForLabel(ui->label_UpperWaterValue1_4,closePic);
+        loadImageForLabel(ui->lbl_R4_HighWaterB43_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R4_HighWaterB43_SW,closePic);
     }
 
 
     //1号下进水阀门开关
     if( plvValueStatus.R1_LowWaterB11Open){
-        loadImageForLabel(ui->label_LowerWaterValue1,openPic);
-    }else if( plvValueStatus.R1_LowWaterB11Closed){
-        loadImageForLabel(ui->label_LowerWaterValue1,closePic);
+        loadImageForLabel(ui->lbl_R1_LowWaterB11_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R1_LowWaterB11_SW,closePic);
     }
 
     //2号下进水阀门开关
     if( plvValueStatus.R2_LowWaterB21Open){
-        loadImageForLabel(ui->label_LowerWaterValue1_2,openPic);
-    }else if( plvValueStatus.R2_LowWaterB21Closed){
-        loadImageForLabel(ui->label_LowerWaterValue1_2,closePic);
+        loadImageForLabel(ui->lbl_R2_LowWaterB21_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R2_LowWaterB21_SW,closePic);
     }
 
     //3号下进水阀门开关
     if( plvValueStatus.R3_LowWaterB31Open){
-        loadImageForLabel(ui->label_LowerWaterValue1_3,openPic);
-    }else if( plvValueStatus.R3_LowWaterB31Open){
-        loadImageForLabel(ui->label_LowerWaterValue1_3,closePic);
+        loadImageForLabel(ui->lbl_R3_LowWaterB31_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R3_LowWaterB31_SW,closePic);
     }
 
     //4号下进水阀门开关
     if( plvValueStatus.R4_LowWaterB41Open){
-        loadImageForLabel(ui->label_LowerWaterValue1_4,openPic);
-    }else if( plvValueStatus.R4_LowWaterB41Open){
-        loadImageForLabel(ui->label_LowerWaterValue1_4,closePic);
+        loadImageForLabel(ui->lbl_R4_LowWaterB41_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R4_LowWaterB41_SW,closePic);
     }
 
     //1号 排沙阀门开关
     if( plvValueStatus.R1_SandDrainPS1Open){
-        loadImageForLabel(ui->label_SandDischargeValue1,openPic);
-    }else if( plvValueStatus.R1_SandDrainPS1Close){
-        loadImageForLabel(ui->label_SandDischargeValue1,closePic);
+        loadImageForLabel(ui->lbl_R1_SandDrainPS1_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R1_SandDrainPS1_SW,closePic);
     }
 
     //2号 排沙阀门开关
     if( plvValueStatus.R2_SandDrainPS2Open){
-        loadImageForLabel(ui->label_SandDischargeValue1_2,openPic);
-    }else if( plvValueStatus.R2_SandDrainPS2Close){
-        loadImageForLabel(ui->label_SandDischargeValue1_2,closePic);
+        loadImageForLabel(ui->lbl_R2_SandDrainPS2_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R2_SandDrainPS2_SW,closePic);
     }
 
     //3号 排沙阀门开关
     if( plvValueStatus.R3_SandDrainPS3Open){
-        loadImageForLabel(ui->label_SandDischargeValue1_3,openPic);
-    }else if( plvValueStatus.R3_SandDrainPS3Close){
-        loadImageForLabel(ui->label_SandDischargeValue1_3,closePic);
+        loadImageForLabel(ui->lbl_R3_SandDrainPS3_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R3_SandDrainPS3_SW,closePic);
     }
 
     //4号 排沙阀门开关
     if( plvValueStatus.R4_SandDrainPS4Open){
-        loadImageForLabel(ui->label_SandDischargeValue1_4,openPic);
-    }else if( plvValueStatus.R4_SandDrainPS4Close){
-        loadImageForLabel(ui->label_SandDischargeValue1_4,closePic);
+        loadImageForLabel(ui->lbl_R4_SandDrainPS4_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R4_SandDrainPS4_SW,closePic);
     }
 
     //1号 排酸阀门开关
     if( plvValueStatus.R1_DrainAcidPS11Open){
-        loadImageForLabel(ui->label_AcidDischargeValue1,openPic);
-    }else if( plvValueStatus.R1_DrainAcidPS11Closed){
-        loadImageForLabel(ui->label_AcidDischargeValue1,closePic);
+        loadImageForLabel(ui->lbl_R1_DrainAcidPS11_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R1_DrainAcidPS11_SW,closePic);
     }
 
     //2号 排酸阀门开关
     if( plvValueStatus.R2_DrainAcidPS12Open){
-        loadImageForLabel(ui->label_AcidDischargeValue1_2,openPic);
-    }else if( plvValueStatus.R2_DrainAcidPS12Closed){
-        loadImageForLabel(ui->label_AcidDischargeValue1_2,closePic);
+        loadImageForLabel(ui->lbl_R2_DrainAcidPS12_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R2_DrainAcidPS12_SW,closePic);
     }
 
     //3号 排酸阀门开关
     if( plvValueStatus.R3_DrainAcidPS13Open){
-        loadImageForLabel(ui->label_AcidDischargeValue1_3,openPic);
-    }else if( plvValueStatus.R3_DrainAcidPS13Close){
-        loadImageForLabel(ui->label_AcidDischargeValue1_3,closePic);
+        loadImageForLabel(ui->lbl_R3_DrainAcidPS13_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R3_DrainAcidPS13_SW,closePic);
     }
 
     //4号 排酸阀门开关
     if( plvValueStatus.R4_DrainAcidPS14Open){
-        loadImageForLabel(ui->label_AcidDischargeValue1_4,openPic);
-    }else if( plvValueStatus.R4_DrainAcidPS14Close){
-        loadImageForLabel(ui->label_AcidDischargeValue1_4,closePic);
+        loadImageForLabel(ui->lbl_R4_DrainAcidPS14_SW,openPic);
+    }else{
+        loadImageForLabel(ui->lbl_R4_DrainAcidPS14_SW,closePic);
     }
 
 }
 
 bool MainWindow::loadImageForLabel(QLabel *label, const QString &imagePath)
 {
+
     // 检查QLabel是否有效
       if (!label) {
           qWarning("Invalid QLabel pointer");
@@ -439,8 +452,80 @@ bool MainWindow::loadImageForLabel(QLabel *label, const QString &imagePath)
       label->setPixmap(pixmap);
       // 启用缩放以适应QLabel大小:cite[5]
       label->setScaledContents(true);
-
+      label->setMaximumSize(71,60);
       return true;
+}
+
+void MainWindow::initAllWidgetStretch()
+{
+    int stretch = 75;
+//    //抽酸泵压力值
+//    initFFontStretch(ui->groupBox_7,stretch);
+//    initFFontStretch(ui->label_acidPumpPressure,stretch);
+//    initFFontStretch(ui->label_83,stretch);
+
+//    //氢氟酸罐
+//    initFFontStretch(ui->groupBox_6,stretch);
+//    initFFontStretch(ui->label_ImportedSteamValue_6,stretch);
+//    initFFontStretch(ui->label_ImportedSteamValue_7,stretch);
+//    initFFontStretch(ui->label_hydrofluoricAcidTankOutletTemperature,stretch);
+//    initFFontStretch(ui->label_hydrofluoricAcidTankLevel,stretch);
+
+//    //皮带秤重量
+//    initFFontStretch(ui->groupBox,stretch);
+//    initFFontStretch(ui->label_ImportedSteamValue_2,stretch);
+//    initFFontStretch(ui->label_ImportedSteamValue_3,stretch);
+//    initFFontStretch(ui->label_ImportedSteamValue_4,stretch);
+//    initFFontStretch(ui->label_ImportedSteamValue_5,stretch);
+//    initFFontStretch(ui->groupBox_7,stretch);
+//    initFFontStretch(ui->groupBox_7,stretch);
+
+    setFontForAllChildren(ui->groupBox_7,stretch);
+
+    setFontForAllChildren(ui->groupBox_6,stretch);
+
+    setFontForAllChildren(ui->groupBox,stretch);
+
+    setFontForAllChildren(ui->groupBox_9,stretch);
+
+    setFontForAllChildren(ui->groupBox_8,stretch);
+
+    setFontForAllChildren(ui->groupBox_4,stretch);
+
+    setFontForAllChildren(ui->groupBox_5,stretch);
+
+    setFontForAllChildren(ui->groupBox_2,stretch);
+
+    setFontForAllChildren(ui->groupBox_3,stretch);
+}
+
+void MainWindow::initFFontStretch(QWidget * w,int stretch)
+{
+    QFont font = w->font();
+    font.setStretch(stretch);
+    font.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
+    font.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
+    w->setFont(font);
+}
+
+void MainWindow::setFontForAllChildren(QWidget *parentWidget, int stretch)
+{
+    if (!parentWidget) {
+           return;
+       }
+
+   // 1. 先设置当前父控件的字体
+   initFFontStretch(parentWidget,stretch);
+
+   // 2. 遍历所有直接子控件
+   foreach (QObject *child, parentWidget->children()) {
+       // 尝试将子对象转换为 QWidget
+       QWidget *childWidget = qobject_cast<QWidget*>(child);
+       if (childWidget) {
+           // 3. 如果转换成功，递归调用此函数，为子控件及其后代设置字体
+           setFontForAllChildren(childWidget, stretch);
+       }
+   }
 }
 
 
@@ -461,140 +546,62 @@ void MainWindow::updateSensorData(const QList<SensorData_Type> &products)
    bool ok = false;
    uint32_t value;
    for (const SensorData_Type &p : products) {
-       //回酸罐
-       if( p.location  == DevLocation::BackAcidTin){
-            //1.阀门
-            if( p.type == SensorType::Valve ){
-                setValveParameters(p.data);
-            }
-       }
-       //氢氧酸罐 液位计
-       else if( p.location == DevLocation::HfTin &&
-                 p.type == SensorType::LevelGauge){
+       QByteArray temp =  HexStringToByteArray(ByteArrayToHexString(p.data), &ok);
+       //氢氟酸罐-坑底 温度
+       if( p.location == HF_TIN_2 && p.type == TEMP ){
             value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-            if( ok){
-
-                qDebug()<<QString("氢氧酸罐 液位计")<<bigEndianToLittleEndian_qt(value);
-                ui->label_LiquidLevelgauge->setText(QString::number(intToFloat(value)));
-            }
-
+            ui->label_hydrofluoricAcidTankOutletTemperature->setText(QString::number(intToFloat(value), 'f', 1));
        }
-       //石墨烯换热器
-       else if( p.location == DevLocation::Graphene){
-            //1.进口蒸汽压力值
-            if( p.type == SensorType::Barometer){
-                value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-                if( ok){
-                    qDebug()<<QString("石墨烯换热器 进口蒸汽压力")<<bigEndianToLittleEndian_qt(value);
-                    ui->label_ImportedSteamValue->setText(QString::number(intToFloat(value)));
-                }
-            }
-            //2.出口液体温度
-            else if( p.type == SensorType::LiquidThermometer ){
-                value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-                if( ok){
-                    qDebug()<<QString("石墨烯换热器 出口液体温度")<<bigEndianToLittleEndian_qt(value);
-                    ui->label_QuletLiquidTemp->setText(QString::number(intToFloat(value)));
-                }
-            }
-            //3.出口冷凝水 PH值
-            else if( p.type == SensorType::LiquidPh ){
-                value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-                if( ok){
-                    qDebug()<<QString("石墨烯换热器 出口冷凝水")<<bigEndianToLittleEndian_qt(value);
-                    ui->label_CondensateS->setText(QString::number(intToFloat(value)));
-                }
-            }
+       //酸洗罐 顶部 温度 气压
+       else if( p.location == HF_TIN_3 && p.type == TEMP ){
+           HFTankTopData tankTopData;
+           char *rcv = temp.data();
+           memcpy((char*)&tankTopData,rcv,sizeof(HFTankTopData));
+
+           ui->labelHFTankTopTemp->setText(QString::number(tankTopData.temperature, 'f', 1) + "℃");
+           ui->labelHFTankTopPressure->setText(QString::number(tankTopData.pressure / 1000.0, 'f', 4) + "MPa");
+       }//皮带秤 1.工作状态 2.总累计量 3.月累计量 4.日累计量 5.班次累计量
+       else if( p.location == BELT_SCALE && p.type == WEIGH ){
+           BeltScaleParams scaleParams;
+           char *rcv = temp.data();
+           memcpy((char*)&scaleParams,rcv,sizeof(BeltScaleParams));
+           ui->labelTotalAccumulated->setText(QString::number(scaleParams.totalAccumulated, 'f', 1) + "t");
+           ui->labelMonthlyAccumulated->setText(QString::number(scaleParams.monthlyAccumulated, 'f', 1) + "t");
+           ui->labelDailyAccumulated->setText(QString::number(scaleParams.dailyAccumulated, 'f', 1) + "t");
+           ui->labelShiftAccumulated->setText(QString::number(scaleParams.shiftAccumulated, 'f', 1) + "t");
+       }//机房控制 AI模拟量
+       else if( p.location == HF_TIN_1 && p.type == PLC_AI ){
+           ProcessVariables variables =parseProcessVariables(p.data);
+
+           QString text = QString::number(variables.pumpOutletPressure, 'f', 1);
+//           text.replace(".", " .");
+           ui->label_acidPumpPressure->setText(
+                       text);
+
+           ui->label_hydrofluoricAcidTankLevel->setText(
+                       QString::number(variables.hydrofluoricAcidTankLevel, 'f', 1) + "m");
+
+
+           ui->label_acidWashTank1_Temperature->setText(
+                       QString::number(variables.reactor1Temperature, 'f', 1) + "℃");
+           ui->label_acidWashTank2_Temperature->setText(
+                       QString::number(variables.reactor2Temperature, 'f', 1) + "℃");
+           ui->label_acidWashTank3_Temperature->setText(
+                       QString::number(variables.reactor3Temperature, 'f', 1) + "℃");
+           ui->label_acidWashTank4_Temperature->setText(
+                       QString::number(variables.reactor4Temperature, 'f', 1) + "℃");
        }
-       //锅炉房
-       else if(p.location == DevLocation::BoilerRoom){
-           //1.设备启停状态  目前还没确定具体参数形式
-
-           //2.锅炉温度
-           if( p.type == SensorType::Temp){
-               value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-               if( ok){
-                   qDebug()<<QString("锅炉房 锅炉温度")<<bigEndianToLittleEndian_qt(value);
-               }
-           }
-           //3.蒸汽压力值
-           else if( (p.type == SensorType::Barometer) &&
-                    (p.index == 0)){
-               value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-               if( ok){
-                   qDebug()<<QString("锅炉房 蒸汽压力值")<<bigEndianToLittleEndian_qt(value);
-               }
-           }
-           //4.天然气压力值
-           else if( (p.type == SensorType::Barometer) &&
-                    (p.index == 1)){
-               value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-               if( ok){
-                   qDebug()<<QString("锅炉房 天然气压力值")<<bigEndianToLittleEndian_qt(value);
-               }
-           }
-           //5.软水质量 目前没有确定具体的参数形式
-
-           //重量
-           else if(p.type == SensorType::Weigh){
-
-                QByteArray temp = HexStringToByteArray(ByteArrayToHexString(p.data), &ok);
-                APT_BeltScaleData beltScaleData;
-                char *rcv = temp.data();
-                memcpy((char*)&beltScaleData,rcv,sizeof(APT_BeltScaleData));
-                float a  = bigEndianToLittleEndian_qt(beltScaleData.monthWeight.u);
-//                beltScaleData.totalWeight.f = bigEndianToFloat(beltScaleData.totalWeight.u);
-//                beltScaleData.monthWeight.f = bigEndianToFloat(beltScaleData.monthWeight.u);
-//                beltScaleData.dayWeight.f = bigEndianToFloat(beltScaleData.dayWeight.u);
-//                beltScaleData.shiftWeight.f = bigEndianToFloat(beltScaleData.shiftWeight.u);
-//                qDebug() << "status:" << beltScaleData.status
-//                         << "totalWeight:" << beltScaleData.totalWeight.f
-//                         << "monthWeight:" << beltScaleData.monthWeight.f
-//                         << "dayWeight:" << beltScaleData.dayWeight.f
-//                         << "shiftWeight:" << beltScaleData.shiftWeight.f;
-           }
-           //液温计
-           else if((p.type == SensorType::LiquidThermometer) &&
-                   (p.index == "2")){
-               value = p.data.toUInt(&ok, 16);   // 16 表示按 16 进制解析
-               float analysiValue = bigEndianToLittleEndian_qt(value);
-               if( ok){
-                   qDebug()<<QString("锅炉房 液温计")<<analysiValue;
-               }
-           }
-
-
+       else if(p.location == HF_TIN_1 && p.type == PLC_DI){
+           setValveParameters(p.data);
        }
 
-//       qDebug() << "index   :" << p.index
-//                << "type    :" << QString::number(p.type)
-//                << "location:" << QString::number(p.location)
-//                << "data    :" << p.data
-//                << "time    :" << p.time.toString(Qt::ISODate);
    }
-   //   qDebug() << "=== SensorData dump end   ===";
+
 }
 
-void MainWindow::updateWeighbridgeData(QSqlQueryModel* newModel)
+void MainWindow::updateWeighbridgeData(const QList<WeighRecordViewType>& products)
 {
-    if (newModel == nullptr) {
-            qDebug() << "Query failed, new model is null";
-            return;
-        }
-
-        // 后续步骤：删除旧模型、设置新模型
-        if (m_oldModel != nullptr) {
-            if (ui->tableView_weighbridge->model() == m_oldModel) {
-                ui->tableView_weighbridge->setModel(nullptr);
-            }
-            delete m_oldModel;
-            m_oldModel = nullptr;
-        }
-
-        // 此时模型已在主线程，可安全设置父对象为 tableView（主线程对象）
-        ui->tableView_weighbridge->setModel(newModel);
-        configureTableView(ui->tableView_weighbridge);
-        m_oldModel = newModel;
+    spreadsheet.fillWeighRecordTable(ui->tableWidget_weighbridge,products);
 }
 
 void MainWindow::startKeepAlive()
@@ -602,14 +609,9 @@ void MainWindow::startKeepAlive()
 
 
     currentPage = (currentPage+1) %3;
-//    ui->stackedWidget->setCurrentIndex(currentPage);
+    ui->stackedWidget->setCurrentIndex(currentPage);
 
-    ui->stackedWidget->setCurrentIndex(0);
-
-
-    if( !MySQLDatabase::instance()->toDB()){
-        MySQLDatabase::instance()->open("QMainWindow");
-    }
+//    ui->stackedWidget->setCurrentIndex(0);
 
 }
 

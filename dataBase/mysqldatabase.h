@@ -40,7 +40,9 @@ class MySQLDatabase : public QObject
 
        bool  getLatestPickedProducts(QList<pickedProduct_Type>& products, int limit);
        bool  getLatestRawProducts(QList<RawInspectionRow>& products, int limit);
+       bool  getLatestWeighRecords(QList<WeighRecordViewType> &records, int limit = 10);
 
+       bool  getTodayWeighRecords(QList<WeighRecordViewType> &records, int limit);
 
        //获取传感器数据
        QList<SensorData_Type> getAllRecords();

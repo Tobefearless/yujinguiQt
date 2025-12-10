@@ -17,79 +17,161 @@ DatabaseWorker::~DatabaseWorker()
 
 void DatabaseWorker::fetchLatestPickedProductData()
 {
-     QList<pickedProduct_Type> pickedProducts;
-     QList<RawInspectionRow> rawProducts;
-     bool flag = false;
-     m_db->open("PickedProductData");
-     while( !QThread::currentThread()->isInterruptionRequested() ){
-         if( !m_db->toDB() ){
-             m_db->open("PickedProductData");
-             QThread::sleep(20);
-         }
-         else{
-            DatabaseWorker::mutex.lock();
-            flag = !flag;
-            if( flag ){
-                if( m_db->getLatestRawProducts(rawProducts,4)){
-                    emit RawInspectcdataReady(rawProducts);
-                    qDebug() << "Fetched" << rawProducts.size() << "Rawproducts";
-                }else{
-                    qWarning() << "Failed to fetch Raw products";
-                }
-            }else{
-                if( m_db->getLatestPickedProducts(pickedProducts,10)){
-                    emit pickedProducdataReady(pickedProducts);
-                    qDebug() << "Fetched" << pickedProducts.size() << "Picked products";
-                }else{
-                    qWarning() << "Failed to fetch Picked products";
-                }
-            }
+    const QString connectionName = "PickedProductData";
+    const int fetchInterval = 10; // 数据获取间隔(秒)
+    const int reconnectInterval = 20; // 重连间隔(秒)
 
-            DatabaseWorker::mutex.unlock();
-         }
-         QThread::sleep(10);
-     }
+    if (!m_db->open(connectionName)) {
+        qCritical() << "初始化数据库连接失败:" << connectionName;
+        emit databaseError("初始化产品数据连接失败");
+    }
+
+    bool flag = false;
+    QList<pickedProduct_Type> pickedProducts;
+    QList<RawInspectionRow> rawProducts;
+
+    while (!m_stopRequested.load() && !QThread::currentThread()->isInterruptionRequested()) {
+
+        if (!checkAndReconnect(connectionName, reconnectInterval)) {
+            continue;
+        }
+
+        QMutexLocker locker(&mutex);  // 使用QMutexLocker自动管理锁
+
+        bool success = false;
+        if (flag) {
+            if (m_db->getLatestRawProducts(rawProducts, 4)) {
+                emit RawInspectcdataReady(rawProducts);
+                qDebug() << "成功获取" << rawProducts.size() << "条原砂检验数据";
+                success = true;
+            } else {
+                qWarning() << "获取原砂检验数据失败";
+                emit databaseError("获取原砂检验数据失败");
+            }
+        } else {
+            if (m_db->getLatestPickedProducts(pickedProducts, 10)) {
+                emit pickedProducdataReady(pickedProducts);
+                qDebug() << "成功获取" << pickedProducts.size() << "条酸洗产品数据";
+                success = true;
+            } else {
+                qWarning() << "获取酸洗产品数据失败";
+                emit databaseError("获取酸洗产品数据失败");
+            }
+        }
+
+        flag = !flag;  // 切换标志
+
+        if (success) {
+            safeSleep(fetchInterval);
+        } else {
+            safeSleep(5);  // 失败时短暂等待后重试
+        }
+    }
+
+    qDebug() << "产品数据获取线程退出";
 }
 
 void DatabaseWorker::fetchSensorData()
 {
-    QList<SensorData_Type> sensorDataList;
-    m_db->open("SensorData");
-    while( !QThread::currentThread()->isInterruptionRequested() ){
-        if( !m_db->toDB() ){
-            m_db->open("SensorData");
-            QThread::sleep(5);
-        }
-        else{
-           DatabaseWorker::mutex.lock();
-           sensorDataList.clear();
-           sensorDataList.append(m_db->getAllRecords());
-           if( !sensorDataList.isEmpty()){
-               emit sensorDataReady(sensorDataList);
-               qDebug() << "Fetched" << sensorDataList.size() << "SensorData";
-           }else{
-               qWarning() << "Failed to SensorData products";
-           }
-           DatabaseWorker::mutex.unlock();
-        }
-        QThread::sleep(3);
+    const QString connectionName = "SensorData";
+    const int fetchInterval = 3;
+    const int reconnectInterval = 5;
+
+    if (!m_db->open(connectionName)) {
+        qCritical() << "初始化传感器数据库连接失败:" << connectionName;
+        emit databaseError("初始化传感器数据连接失败");
     }
+
+    QList<SensorData_Type> sensorDataList;
+
+    while (!m_stopRequested.load() && !QThread::currentThread()->isInterruptionRequested()) {
+
+        if (!checkAndReconnect(connectionName, reconnectInterval)) {
+            continue;
+        }
+
+        {
+            QMutexLocker locker(&mutex);
+            sensorDataList = m_db->getAllRecords();
+
+            if (!sensorDataList.isEmpty()) {
+                emit sensorDataReady(sensorDataList);
+                qDebug() << "成功获取" << sensorDataList.size() << "条传感器数据";
+            } else {
+                qWarning() << "获取传感器数据为空";
+                // 不发送错误，因为空数据可能是正常的
+            }
+        }
+
+        safeSleep(fetchInterval);
+    }
+
+    qDebug() << "传感器数据获取线程退出";
 }
 
 void DatabaseWorker::fetchWeighbridgeData()
 {
+    const QString connectionName = "WeighbridgeData";
+    const int fetchInterval = 10;
+    const int reconnectInterval = 20;
 
-    while( !QThread::currentThread()->isInterruptionRequested() ){
-        if( sqlServerHandler.isConnected()){
-            QSqlQueryModel* queryModel =  sqlServerHandler.getLastNRecords(10, "RunningNum", true);
-            if( queryModel != nullptr){
-                emit WeighbridgeDataReady(queryModel);
-            }
-            QThread::sleep(10);
-        }else{
-            sqlServerHandler.connectToDatabase();
-            QThread::sleep(20);
-        }
+    if (!m_db->open(connectionName)) {
+        qCritical() << "初始化地磅数据库连接失败:" << connectionName;
+        emit databaseError("初始化地磅数据连接失败");
     }
 
+    QList<WeighRecordViewType> weighRecordDataList;
+
+    while (!m_stopRequested.load() && !QThread::currentThread()->isInterruptionRequested()) {
+
+        if (!checkAndReconnect(connectionName, reconnectInterval)) {
+            continue;
+        }
+
+        {
+            QMutexLocker locker(&mutex);
+            if (m_db->getTodayWeighRecords(weighRecordDataList, 10)) {  // 添加limit参数
+                emit weighbridgeDataReady(weighRecordDataList);
+                qDebug() << "成功获取" << weighRecordDataList.size() << "条地磅数据";
+            } else {
+                qWarning() << "获取地磅数据失败";
+                emit databaseError("获取地磅数据失败");
+            }
+        }
+
+        safeSleep(fetchInterval);
+    }
+
+    qDebug() << "地磅数据获取线程退出";
 }
+
+void DatabaseWorker::stop()
+{
+    m_stopRequested.store(1);  // 修正为 store()
+}
+
+bool DatabaseWorker::checkAndReconnect(const QString& connectionName, int sleepSeconds)
+{
+    if (!m_db->toDB()) {
+        qWarning() << "数据库连接异常，尝试重新连接:" << connectionName;
+        if (!m_db->open(connectionName)) {
+            qCritical() << "数据库重新连接失败:" << connectionName;
+            emit databaseError(QString("数据库连接失败: %1").arg(connectionName));
+            safeSleep(sleepSeconds);
+            return false;
+        }
+        qInfo() << "数据库重新连接成功:" << connectionName;
+    }
+    return true;
+}
+
+void DatabaseWorker::safeSleep(int seconds)
+{
+    for (int i = 0; i < seconds * 10; ++i) {
+        if (m_stopRequested.load()) {
+            break;
+        }
+        QThread::msleep(100);
+    }
+}
+

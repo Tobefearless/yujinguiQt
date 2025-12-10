@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_DatabaseWorker_t {
-    QByteArrayData data[13];
-    char stringdata0[217];
+    QByteArrayData data[15];
+    char stringdata0[262];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,17 +42,20 @@ QT_MOC_LITERAL(6, 94, 23), // "QList<RawInspectionRow>"
 QT_MOC_LITERAL(7, 118, 16), // "RawInspectionRow"
 QT_MOC_LITERAL(8, 135, 15), // "sensorDataReady"
 QT_MOC_LITERAL(9, 151, 22), // "QList<SensorData_Type>"
-QT_MOC_LITERAL(10, 174, 20), // "WeighbridgeDataReady"
-QT_MOC_LITERAL(11, 195, 15), // "QSqlQueryModel*"
-QT_MOC_LITERAL(12, 211, 5) // "model"
+QT_MOC_LITERAL(10, 174, 20), // "weighbridgeDataReady"
+QT_MOC_LITERAL(11, 195, 26), // "QList<WeighRecordViewType>"
+QT_MOC_LITERAL(12, 222, 12), // "weighRecords"
+QT_MOC_LITERAL(13, 235, 13), // "databaseError"
+QT_MOC_LITERAL(14, 249, 12) // "errorMessage"
 
     },
     "DatabaseWorker\0pickedProducdataReady\0"
     "\0QList<pickedProduct_Type>\0products\0"
     "RawInspectcdataReady\0QList<RawInspectionRow>\0"
     "RawInspectionRow\0sensorDataReady\0"
-    "QList<SensorData_Type>\0WeighbridgeDataReady\0"
-    "QSqlQueryModel*\0model"
+    "QList<SensorData_Type>\0weighbridgeDataReady\0"
+    "QList<WeighRecordViewType>\0weighRecords\0"
+    "databaseError\0errorMessage"
 };
 #undef QT_MOC_LITERAL
 
@@ -62,24 +65,26 @@ static const uint qt_meta_data_DatabaseWorker[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       4,       // signalCount
+       5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   34,    2, 0x06 /* Public */,
-       5,    1,   37,    2, 0x06 /* Public */,
-       8,    1,   40,    2, 0x06 /* Public */,
-      10,    1,   43,    2, 0x06 /* Public */,
+       1,    1,   39,    2, 0x06 /* Public */,
+       5,    1,   42,    2, 0x06 /* Public */,
+       8,    1,   45,    2, 0x06 /* Public */,
+      10,    1,   48,    2, 0x06 /* Public */,
+      13,    1,   51,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
     QMetaType::Void, 0x80000000 | 6,    7,
     QMetaType::Void, 0x80000000 | 9,    4,
     QMetaType::Void, 0x80000000 | 11,   12,
+    QMetaType::Void, QMetaType::QString,   14,
 
        0        // eod
 };
@@ -93,7 +98,8 @@ void DatabaseWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 0: _t->pickedProducdataReady((*reinterpret_cast< const QList<pickedProduct_Type>(*)>(_a[1]))); break;
         case 1: _t->RawInspectcdataReady((*reinterpret_cast< const QList<RawInspectionRow>(*)>(_a[1]))); break;
         case 2: _t->sensorDataReady((*reinterpret_cast< const QList<SensorData_Type>(*)>(_a[1]))); break;
-        case 3: _t->WeighbridgeDataReady((*reinterpret_cast< QSqlQueryModel*(*)>(_a[1]))); break;
+        case 3: _t->weighbridgeDataReady((*reinterpret_cast< const QList<WeighRecordViewType>(*)>(_a[1]))); break;
+        case 4: _t->databaseError((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -124,7 +130,7 @@ void DatabaseWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QSqlQueryModel* >(); break;
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QList<WeighRecordViewType> >(); break;
             }
             break;
         }
@@ -153,9 +159,16 @@ void DatabaseWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             }
         }
         {
-            typedef void (DatabaseWorker::*_t)(QSqlQueryModel * );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&DatabaseWorker::WeighbridgeDataReady)) {
+            typedef void (DatabaseWorker::*_t)(const QList<WeighRecordViewType> & );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&DatabaseWorker::weighbridgeDataReady)) {
                 *result = 3;
+                return;
+            }
+        }
+        {
+            typedef void (DatabaseWorker::*_t)(const QString & );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&DatabaseWorker::databaseError)) {
+                *result = 4;
                 return;
             }
         }
@@ -187,13 +200,13 @@ int DatabaseWorker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
@@ -220,10 +233,17 @@ void DatabaseWorker::sensorDataReady(const QList<SensorData_Type> & _t1)
 }
 
 // SIGNAL 3
-void DatabaseWorker::WeighbridgeDataReady(QSqlQueryModel * _t1)
+void DatabaseWorker::weighbridgeDataReady(const QList<WeighRecordViewType> & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void DatabaseWorker::databaseError(const QString & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

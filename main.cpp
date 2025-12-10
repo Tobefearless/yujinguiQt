@@ -70,9 +70,9 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
 
-    QFont font = a.font();
-    font.setPointSize(10); // 比默认稍大，适配4K屏
-    a.setFont(font);
+//    QFont font = a.font();
+//    font.setPointSize(10); // 比默认稍大，适配4K屏
+//    a.setFont(font);
 
     //注册数据类型
     qRegisterMetaType<pickedProduct_Type>();
@@ -81,11 +81,11 @@ int main(int argc, char *argv[])
     qRegisterMetaType<QList<RawInspectionRow>>();
     qRegisterMetaType<SensorData_Type>();
     qRegisterMetaType<QList<SensorData_Type>>();
-    qRegisterMetaType<QList<SensorData_Type>>();
+    qRegisterMetaType<QList<WeighRecordViewType>>();
 
     // 获取所有屏幕并排序（使用 QScreen）
     QList<QScreen*> screens = QApplication::screens();
-    std::sort(screens.begin(), screens.end(), screenCompare);
+//    std::sort(screens.begin(), screens.end(), screenCompare);
 
     // 检查是否有至少3个屏幕
     if(screens.size() < 3) {

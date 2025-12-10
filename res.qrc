@@ -11,5 +11,7 @@
         <file>image/ValveSwitch_Open1.png</file>
         <file>image/OperationStatusClose.png</file>
         <file>image/OperationStatusOpen.png</file>
+        <file>image/ValveSwitch_OpenG1.png</file>
+        <file>image/ValveSwitch_CloseG1.png</file>
     </qresource>
 </RCC>

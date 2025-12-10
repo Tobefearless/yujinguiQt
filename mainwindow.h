@@ -48,15 +48,22 @@ private:
     QTableWidgetItem * getTableWidgetItem(QFont font,int alignment,QString content);
     void styleAdjustment(QTableWidget *t);
     bool initDB();
+    void initTableWidget();
 
     void configureTableView(QTableView *tableView);
     void setValveParameters(QString str);
     bool loadImageForLabel(QLabel *label, const QString &imagePath);
+
+
+    void initAllWidgetStretch();
+    void initFFontStretch(QWidget * w,int stretch);
+    void setFontForAllChildren(QWidget *parentWidget,int stretch);
+
 private slots:
        void updatePickedProductTable(const QList<pickedProduct_Type>& products);
        void updateRawInspectTable(const QList<RawInspectionRow>& products);
        void updateSensorData(const QList<SensorData_Type>& products);
-       void updateWeighbridgeData(QSqlQueryModel* newModel);
+       void updateWeighbridgeData(const QList<WeighRecordViewType>& products);
        void startKeepAlive();
 
 

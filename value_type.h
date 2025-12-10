@@ -122,55 +122,27 @@ Q_DECLARE_METATYPE(WeighRecord)
 
 
 typedef enum{
-    LowWeightRoom   = 0x01,   // 地磅房
-    BeltScale       = 0x02,   // 皮带称
-    BackAcidTin     = 0x03,   // 回酸罐
-    HfTin           = 0x04,   // 氢氟酸罐
-    Graphene        = 0x05,   // 石墨烯热换器
-    ReactionStill   = 0x06,   // 反应釜
-    BoilerRoom      = 0x07,   // 锅炉房
-    DosingRoom      = 0x08    // 加药间
+    HF_TIN_1      = 0x01,  // 氢氟酸罐-PLC
+    HF_TIN_2      = 0x02,  // 氢氟酸罐-坑底
+    HF_TIN_3      = 0x03,  // 酸洗罐-顶部
+    BELT_SCALE    = 0x04,  // 皮带称
+    BOILER_ROOM   = 0x05   // 锅炉房
 }DevLocation;
 
 // 传感器类型
 typedef enum{
-    Temp               = 0x01,  // 温度
-    Weigh              = 0x02,  // 重量
-    LevelGauge         = 0x03,  // 液位计
-    Barometer          = 0x04,  // 气压计
-    LiquidThermometer  = 0x05,  // 液温计
-    LiquidPh           = 0x06,  // 液体 PH
-    Valve              = 0x07   // 阀门
+    TEMP               = 0x01,  // 温度
+    WEIGH              = 0x02,  // 重量
+    LEVEL_GAUGE        = 0x03,  // 液位计
+    BAROMETER          = 0x04,  // 气压计
+    LIQUID_THERMOMETER = 0x05,  // 液温计
+    LIQUIL_PH          = 0x06,  // 液体PH
+    VALVE              = 0x07,  // 阀门
+    PLC_AI             = 0x08,  // 酸洗PLC模拟量-温度/液位
+    PLC_DI             = 0x09   // 酸洗PLC数字量-阀门
 }SensorType;
 
 
-// 辅助：把枚举值转成中文描述
-static inline QString devLocationToString(DevLocation loc) {
-   switch (loc) {
-   case DevLocation::LowWeightRoom:  return QStringLiteral("地磅房");
-   case DevLocation::BeltScale:      return QStringLiteral("皮带称");
-   case DevLocation::BackAcidTin:    return QStringLiteral("回酸罐");
-   case DevLocation::HfTin:          return QStringLiteral("氢氟酸罐");
-   case DevLocation::Graphene:       return QStringLiteral("石墨烯热换器");
-   case DevLocation::ReactionStill:  return QStringLiteral("反应釜");
-   case DevLocation::BoilerRoom:     return QStringLiteral("锅炉房");
-   case DevLocation::DosingRoom:     return QStringLiteral("加药间");
-   }
-   return QStringLiteral("未知");
-}
-
-static inline QString sensorTypeToString(SensorType type) {
-   switch (type) {
-   case SensorType::Temp:              return QStringLiteral("温度");
-   case SensorType::Weigh:             return QStringLiteral("重量");
-   case SensorType::LevelGauge:        return QStringLiteral("液位计");
-   case SensorType::Barometer:         return QStringLiteral("气压计");
-   case SensorType::LiquidThermometer: return QStringLiteral("液温计");
-   case SensorType::LiquidPh:          return QStringLiteral("液体PH");
-   case SensorType::Valve:             return QStringLiteral("阀门");
-   }
-   return QStringLiteral("未知");
-}
 
 typedef struct {
     QString index;
@@ -180,6 +152,27 @@ typedef struct {
     QDateTime time;
 }SensorData_Type;
 Q_DECLARE_METATYPE(SensorData_Type)
+
+typedef struct
+{
+    QString RunningNum;      // 流水号
+    QString Licenseplate;    // 车牌号
+    QString Driver;          // 司机
+    QString BusinessType;    // 业务类型
+    QString CustomerName;    // 客户名称
+    QString SupplierName;    // 供应商名称
+    QString ProductName;     // 产品名称
+    double TotalWeight;      // 总重量
+    double Tare;             // 皮重
+    double Buckle;           // 扣重
+    double NeatWeight;       // 净重
+    QDateTime WeighTime;     // 称重时间
+    QString SendcorpName;    // 发货单位
+    QString RecvcorpName;    // 收货单位
+}WeighRecordViewType;
+
+// 如果需要使用QList或QVariant，可以注册元类型
+ Q_DECLARE_METATYPE(WeighRecordViewType)
 
 #pragma pack(push, 1) // 禁用结构体对齐，确保紧凑布局
 typedef struct  {
@@ -377,12 +370,38 @@ typedef struct {
     FP_Type shiftWeight;   // 班次累计量
 } APT_BeltScaleData;     // 皮带秤数据
 
+
+typedef struct  {
+    float temperature;  // 温度
+    float pressure;     // 气压
+}HFTankTopData;
+
+typedef struct  {
+    uint32_t workStatus;        // 工作状态
+    float totalAccumulated;     // 总累计量
+    float monthlyAccumulated;   // 月累计量
+    float dailyAccumulated;     // 日累计量
+    float shiftAccumulated;     // 班次累计量
+}BeltScaleParams;
+
+// 工艺过程AI模拟量数据结构体
+typedef struct  {
+    float  pumpOutletPressure;// 抽酸泵出口压力值 (Mpa/兆帕)
+    float hydrofluoricAcidTankLevel;// 氢氟酸罐液位值 (m/米)
+    float reactor1Temperature;// 1号反应罐温度值 (℃/摄氏度)
+    float reactor2Temperature;// 2号反应罐温度值 (℃/摄氏度)
+    float reactor3Temperature;// 3号反应罐温度值 (℃/摄氏度)
+    float reactor4Temperature;// 4号反应罐温度值 (℃/摄氏度)
+}ProcessVariables;
 #pragma pack(pop) // 恢复默认对齐方式
 
 
 uint32_t bigEndianToLittleEndian_qt(uint32_t value);
 float intToFloat(uint32_t value);
 float bigEndianToFloat(quint32 raw);
+
+float extractFloatFromBeWordSwapped(const QByteArray &data, int offset);
+ProcessVariables parseProcessVariables(const QString &hexString);
 
 //十六进制的字符串转QByteArray
 QByteArray HexStringToByteArray(QString hex, bool *ok);

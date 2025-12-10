@@ -17,11 +17,27 @@ public:
    void fillMultiplePickedProducts(QTableWidget *t, const QList<pickedProduct_Type> &products);
    void fillRawInspectProducts(QTableWidget *t, const QList<RawInspectionRow> &products);
 
+   // 表头初始化
+   void initWeighRecordTable(QTableWidget *t);
+   // 数据刷新
+   void fillWeighRecordTable(QTableWidget *t,
+                             const QList<WeighRecordViewType> &records);
+
+   QString convertSamplingDateToString(const QString &originalDateStr,
+                                       const QString &inputFormat = "yyyy年M月d日",
+                                       const QString &outputFormat = "M月d日");
+
+
 private:
     // 辅助函数
     QTableWidgetItem *getTableWidgetItem(QFont font, int alignment, QString content);
     QTableWidgetItem *createCenteredItem(QString name);
     void styleAdjustment(QTableWidget *t);
+
+    // 智能调整列宽的函数
+    void adjustColumnWidths(QTableWidget *t);
+
+    QString formatByString(const QString &str);
 
     int RawSandlevel1Font;
     int RawSandlevel2Font;
@@ -37,6 +53,8 @@ private:
     int PickProductHeaderHeight;
     int PickProductContentHeight;
 
+
+    int strench;
 };
 
 #endif // SPREADSHEET_H

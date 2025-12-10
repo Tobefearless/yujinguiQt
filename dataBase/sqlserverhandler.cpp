@@ -27,25 +27,24 @@ bool SQLServerHandler::connectToDatabase()
 //              m_db.setPassword("LCKJ2018@");
 
 
-      QString connStr = QStringLiteral(
-                "Driver={SQL Server};"  // 修改为13版本
-                "Server=192.168.100.10;"
-                "Database=EasyWeighDB;"
-                "Uid=LC;"
-                "Pwd=LCKJ2018@;");
+//      QString connStr = QStringLiteral(
+//                "Driver={SQL Server};"  // 修改为13版本
+//                "Server=192.168.100.10;"
+//                "Database=EasyWeighDB;"
+//                "Uid=LC;"
+//                "Pwd=LCKJ2018@;");
 
-        // 3. 把整串交给 Qt
-        m_db.setDatabaseName(connStr);
+//        // 3. 把整串交给 Qt
+//        m_db.setDatabaseName(connStr);
 
-//            QString connStr = QStringLiteral(
-//                      "Driver={ODBC Driver 17 for SQL Server};"  // 修改为13版本
-//                      "Server=192.168.100.13,1444;"
-//                      "Database=EasyWeighDB;"
-//                      "Uid=LC;"
-//                      "Pwd=LCKJ2018@;");
+            QString connStr = QStringLiteral(
+                      "Driver={ODBC Driver 17 for SQL Server};"  // 修改为13版本
+                      "Server=192.168.100.13,1444;"
+                      "Database=EasyWeighDB;"
+                      "Uid=LC;"
+                      "Pwd=LCKJ2018@;");
 
-              // 3. 把整串交给 Qt
-//              m_db.setDatabaseName(connStr);
+              m_db.setDatabaseName(connStr);
 
 
 
