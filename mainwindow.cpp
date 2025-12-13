@@ -52,18 +52,18 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(weighbridgeT,SIGNAL(weighbridgeDataReady(QList<WeighRecordViewType>)),
             this,SLOT(updateWeighbridgeData(QList<WeighRecordViewType>)));
 
-    connect(this,&MainWindow::startThread,myT,&DatabaseWorker::fetchLatestPickedProductData);//启动线程
-    connect(this,&MainWindow::startThread,sensorT,&DatabaseWorker::fetchSensorData);//启动线程
+//    connect(this,&MainWindow::startThread,myT,&DatabaseWorker::fetchLatestPickedProductData);//启动线程
+//    connect(this,&MainWindow::startThread,sensorT,&DatabaseWorker::fetchSensorData);//启动线程
     connect(this,&MainWindow::startThread,weighbridgeT,&DatabaseWorker::fetchWeighbridgeData);//启动线程
 
     connect(m_keepAliveTimer,SIGNAL(timeout()),this,SLOT(startKeepAlive()));
     thread->start();
     sensorThread->start();
     weighbridgeThread->start();
-    m_keepAliveTimer->start(1000 * 10);
+    m_keepAliveTimer->start(1000 * 60 * 2);
 
     showMaximized();
-//    setWindowFlags(Qt::FramelessWindowHint);   // 去掉系统边框
+
     setWindowTitle("工业控制监控系统");
     emit startThread();
 
@@ -458,7 +458,7 @@ bool MainWindow::loadImageForLabel(QLabel *label, const QString &imagePath)
 
 void MainWindow::initAllWidgetStretch()
 {
-    int stretch = 75;
+    int stretch = 100;
 //    //抽酸泵压力值
 //    initFFontStretch(ui->groupBox_7,stretch);
 //    initFFontStretch(ui->label_acidPumpPressure,stretch);
@@ -576,7 +576,7 @@ void MainWindow::updateSensorData(const QList<SensorData_Type> &products)
            QString text = QString::number(variables.pumpOutletPressure, 'f', 1);
 //           text.replace(".", " .");
            ui->label_acidPumpPressure->setText(
-                       text);
+                       text + " mpa");
 
            ui->label_hydrofluoricAcidTankLevel->setText(
                        QString::number(variables.hydrofluoricAcidTankLevel, 'f', 1) + "m");

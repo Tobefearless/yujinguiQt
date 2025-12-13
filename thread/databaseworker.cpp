@@ -130,7 +130,7 @@ void DatabaseWorker::fetchWeighbridgeData()
 
         {
             QMutexLocker locker(&mutex);
-            if (m_db->getTodayWeighRecords(weighRecordDataList, 10)) {  // 添加limit参数
+            if (m_db->getLatestWeighRecords(weighRecordDataList, 10)) {  // 添加limit参数
                 emit weighbridgeDataReady(weighRecordDataList);
                 qDebug() << "成功获取" << weighRecordDataList.size() << "条地磅数据";
             } else {

@@ -39,6 +39,8 @@ private:
 
     QString formatByString(const QString &str);
 
+    QString toHHmm(const QString &hmStr);
+
     int RawSandlevel1Font;
     int RawSandlevel2Font;
     int RawSandlevel3Font;

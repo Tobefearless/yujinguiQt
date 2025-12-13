@@ -32,6 +32,7 @@ class Ui_MainWindow
 public:
     QAction *action_laboratory;
     QWidget *centralWidget;
+    QGridLayout *gridLayout_10;
     QStackedWidget *stackedWidget;
     QWidget *page;
     QTableWidget *tableWidget_weighbridge;
@@ -236,20 +237,28 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1920, 1080);
+        MainWindow->resize(1919, 1040);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(0, 55, 118);"));
         action_laboratory = new QAction(MainWindow);
         action_laboratory->setObjectName(QStringLiteral("action_laboratory"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        gridLayout_10 = new QGridLayout(centralWidget);
+        gridLayout_10->setSpacing(6);
+        gridLayout_10->setContentsMargins(11, 11, 11, 11);
+        gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
         stackedWidget = new QStackedWidget(centralWidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(9, 9, 1902, 1061));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
-        stackedWidget->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
+        stackedWidget->setSizePolicy(sizePolicy1);
         stackedWidget->setMinimumSize(QSize(0, 0));
         QFont font;
         font.setKerning(false);
@@ -260,10 +269,10 @@ public:
         page->setObjectName(QStringLiteral("page"));
         tableWidget_weighbridge = new QTableWidget(page);
         tableWidget_weighbridge->setObjectName(QStringLiteral("tableWidget_weighbridge"));
-        tableWidget_weighbridge->setGeometry(QRect(10, 370, 1891, 681));
+        tableWidget_weighbridge->setGeometry(QRect(10, 360, 1881, 701));
         layoutWidget1 = new QWidget(page);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 0, 1891, 352));
+        layoutWidget1->setGeometry(QRect(10, 0, 1881, 341));
         verticalLayout_6 = new QVBoxLayout(layoutWidget1);
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -289,7 +298,7 @@ public:
         label->setMaximumSize(QSize(100, 16777215));
         label->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -305,7 +314,7 @@ public:
         label_ImportedSteamValue_8->setObjectName(QStringLiteral("label_ImportedSteamValue_8"));
         label_ImportedSteamValue_8->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 40pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -318,7 +327,7 @@ public:
         label_acidPumpPressure->setObjectName(QStringLiteral("label_acidPumpPressure"));
         label_acidPumpPressure->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 40pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -363,7 +372,7 @@ public:
         label_2->setMaximumSize(QSize(100, 16777215));
         label_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -387,7 +396,7 @@ public:
         label_ImportedSteamValue_7->setObjectName(QStringLiteral("label_ImportedSteamValue_7"));
         label_ImportedSteamValue_7->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 40pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -400,7 +409,7 @@ public:
         label_hydrofluoricAcidTankLevel->setObjectName(QStringLiteral("label_hydrofluoricAcidTankLevel"));
         label_hydrofluoricAcidTankLevel->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 40pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -423,7 +432,7 @@ public:
 
         groupBox = new QGroupBox(layoutWidget1);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setMinimumSize(QSize(0, 170));
+        groupBox->setMinimumSize(QSize(0, 160));
         groupBox->setMaximumSize(QSize(16777215, 16777215));
         groupBox->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
 "    border: 3px solid rgb(40, 105, 180);  /* \346\257\224\350\203\214\346\231\257\350\211\262\344\272\256\344\270\200\347\202\271\347\232\204\350\223\235\350\211\262\357\274\214\345\256\275\345\272\246\345\242\236\345\212\240 */\n"
@@ -443,7 +452,7 @@ public:
         label_3->setMaximumSize(QSize(100, 16777215));
         label_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -467,7 +476,7 @@ public:
         label_ImportedSteamValue_2->setObjectName(QStringLiteral("label_ImportedSteamValue_2"));
         label_ImportedSteamValue_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -480,7 +489,7 @@ public:
         labelTotalAccumulated->setObjectName(QStringLiteral("labelTotalAccumulated"));
         labelTotalAccumulated->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -508,7 +517,7 @@ public:
         label_ImportedSteamValue_3->setObjectName(QStringLiteral("label_ImportedSteamValue_3"));
         label_ImportedSteamValue_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -521,7 +530,7 @@ public:
         labelMonthlyAccumulated->setObjectName(QStringLiteral("labelMonthlyAccumulated"));
         labelMonthlyAccumulated->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -549,7 +558,7 @@ public:
         label_ImportedSteamValue_4->setObjectName(QStringLiteral("label_ImportedSteamValue_4"));
         label_ImportedSteamValue_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -562,7 +571,7 @@ public:
         labelDailyAccumulated->setObjectName(QStringLiteral("labelDailyAccumulated"));
         labelDailyAccumulated->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -590,7 +599,7 @@ public:
         label_ImportedSteamValue_5->setObjectName(QStringLiteral("label_ImportedSteamValue_5"));
         label_ImportedSteamValue_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -603,7 +612,7 @@ public:
         labelShiftAccumulated->setObjectName(QStringLiteral("labelShiftAccumulated"));
         labelShiftAccumulated->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -648,7 +657,7 @@ public:
         label_4->setMaximumSize(QSize(150, 16777215));
         label_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -675,7 +684,7 @@ public:
         label_ImportedSteamValue_6->setObjectName(QStringLiteral("label_ImportedSteamValue_6"));
         label_ImportedSteamValue_6->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -688,7 +697,7 @@ public:
         label_hydrofluoricAcidTankOutletTemperature->setObjectName(QStringLiteral("label_hydrofluoricAcidTankOutletTemperature"));
         label_hydrofluoricAcidTankOutletTemperature->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 40pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -716,7 +725,7 @@ public:
         label_ImportedSteamValue->setObjectName(QStringLiteral("label_ImportedSteamValue"));
         label_ImportedSteamValue->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -729,7 +738,7 @@ public:
         labelHFTankTopTemp->setObjectName(QStringLiteral("labelHFTankTopTemp"));
         labelHFTankTopTemp->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 40pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -757,7 +766,7 @@ public:
         label_QuletLiquidTemp->setObjectName(QStringLiteral("label_QuletLiquidTemp"));
         label_QuletLiquidTemp->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -770,7 +779,7 @@ public:
         labelHFTankTopPressure->setObjectName(QStringLiteral("labelHFTankTopPressure"));
         labelHFTankTopPressure->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 40pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -797,7 +806,7 @@ public:
 
         groupBox_8 = new QGroupBox(layoutWidget1);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
-        groupBox_8->setMinimumSize(QSize(0, 170));
+        groupBox_8->setMinimumSize(QSize(0, 160));
         groupBox_8->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
 "    border: 3px solid rgb(40, 105, 180);  /* \346\257\224\350\203\214\346\231\257\350\211\262\344\272\256\344\270\200\347\202\271\347\232\204\350\223\235\350\211\262\357\274\214\345\256\275\345\272\246\345\242\236\345\212\240 */\n"
 "    border-radius: 10px;             \n"
@@ -816,7 +825,7 @@ public:
         label_5->setMaximumSize(QSize(150, 16777215));
         label_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size:36pt;\n"
+"    font-size:48px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -840,7 +849,7 @@ public:
         label_84->setObjectName(QStringLiteral("label_84"));
         label_84->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -851,11 +860,11 @@ public:
 
         label_RunningStatus = new QLabel(groupBox_8);
         label_RunningStatus->setObjectName(QStringLiteral("label_RunningStatus"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label_RunningStatus->sizePolicy().hasHeightForWidth());
-        label_RunningStatus->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_RunningStatus->sizePolicy().hasHeightForWidth());
+        label_RunningStatus->setSizePolicy(sizePolicy2);
         label_RunningStatus->setMinimumSize(QSize(0, 0));
         label_RunningStatus->setMaximumSize(QSize(71, 60));
         label_RunningStatus->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -885,7 +894,7 @@ public:
         label_86->setObjectName(QStringLiteral("label_86"));
         label_86->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -898,7 +907,7 @@ public:
         label_TemperatureG->setObjectName(QStringLiteral("label_TemperatureG"));
         label_TemperatureG->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size:32pt;\n"
+"    font-size:42px;\n"
 "    background:transparent;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -926,7 +935,7 @@ public:
         label_88->setObjectName(QStringLiteral("label_88"));
         label_88->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -939,7 +948,7 @@ public:
         label_NaturalValueG->setObjectName(QStringLiteral("label_NaturalValueG"));
         label_NaturalValueG->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size:32pt;\n"
+"    font-size:42px;\n"
 "    background:transparent;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -967,7 +976,7 @@ public:
         label_87->setObjectName(QStringLiteral("label_87"));
         label_87->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "    font-family: \"Microsoft YaHei\";\n"
-"    font-size: 32pt;\n"
+"    font-size: 42px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background: transparent;\n"
 "    color: white;\n"
@@ -980,7 +989,7 @@ public:
         label_SteamValueG->setObjectName(QStringLiteral("label_SteamValueG"));
         label_SteamValueG->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size:32pt;\n"
+"    font-size:42px;\n"
 "    background:transparent;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1016,13 +1025,13 @@ public:
         page_2->setObjectName(QStringLiteral("page_2"));
         tableWidget_RowSand = new QTableWidget(page_2);
         tableWidget_RowSand->setObjectName(QStringLiteral("tableWidget_RowSand"));
-        tableWidget_RowSand->setGeometry(QRect(0, 360, 1901, 691));
+        tableWidget_RowSand->setGeometry(QRect(0, 360, 1891, 691));
         tableWidget_RowSand->setStyleSheet(QStringLiteral(""));
         tableWidget_RowSand->horizontalHeader()->setVisible(false);
         tableWidget_RowSand->verticalHeader()->setVisible(false);
         layoutWidget2 = new QWidget(page_2);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(0, 0, 1901, 351));
+        layoutWidget2->setGeometry(QRect(0, 0, 1891, 341));
         horizontalLayout_24 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_24->setSpacing(6);
         horizontalLayout_24->setContentsMargins(11, 11, 11, 11);
@@ -1038,7 +1047,7 @@ public:
 "    padding-top: 48px;           \n"
 "    font-weight: 500;     \n"
 "    background-color: rgb(0, 65, 140);\n"
-"    font-size: 38pt;\n"
+"    font-size: 58px;\n"
 "}\n"
 "\n"
 "QGroupBox::title {\n"
@@ -1047,7 +1056,7 @@ public:
 "    top: 4px;\n"
 "    font-family: \"Microsoft YaHei\";  \n"
 "    color: white;  /* \350\256\276\347\275\256\346\240\207\351\242\230\351\242\234\350\211\262\344\270\272\347\231\275\350\211\262 */\n"
-"    padding: 0 20px;  /* \346\267\273\345\212\240\345\206\205\350\276\271\350\267\235\350\256\251\346\240\207\351\242\230\346\230\276\347\244\272\346\233\264\350\210\222\351\200\202 */\n"
+"    padding: 0 10px;  /* \346\267\273\345\212\240\345\206\205\350\276\271\350\267\235\350\256\251\346\240\207\351\242\230\346\230\276\347\244\272\346\233\264\350\210\222\351\200\202 */\n"
 "}"));
         gridLayout_6 = new QGridLayout(groupBox_2);
         gridLayout_6->setSpacing(6);
@@ -1065,7 +1074,7 @@ public:
         label_SofaValue1->setObjectName(QStringLiteral("label_SofaValue1"));
         label_SofaValue1->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1078,7 +1087,7 @@ public:
         label_acidWashTank1_Temperature->setObjectName(QStringLiteral("label_acidWashTank1_Temperature"));
         label_acidWashTank1_Temperature->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 44pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1098,7 +1107,7 @@ public:
         label_UpperAcidValue1->setObjectName(QStringLiteral("label_UpperAcidValue1"));
         label_UpperAcidValue1->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1109,8 +1118,8 @@ public:
 
         lbl_R1_HighAcidA12_SW = new QLabel(groupBox_2);
         lbl_R1_HighAcidA12_SW->setObjectName(QStringLiteral("lbl_R1_HighAcidA12_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R1_HighAcidA12_SW->sizePolicy().hasHeightForWidth());
-        lbl_R1_HighAcidA12_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R1_HighAcidA12_SW->sizePolicy().hasHeightForWidth());
+        lbl_R1_HighAcidA12_SW->setSizePolicy(sizePolicy2);
         lbl_R1_HighAcidA12_SW->setMinimumSize(QSize(0, 0));
         lbl_R1_HighAcidA12_SW->setMaximumSize(QSize(71, 60));
         lbl_R1_HighAcidA12_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1129,7 +1138,7 @@ public:
         label_UpperWaterValue1->setObjectName(QStringLiteral("label_UpperWaterValue1"));
         label_UpperWaterValue1->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1140,8 +1149,8 @@ public:
 
         lbl_R1_HighWaterB13_SW = new QLabel(groupBox_2);
         lbl_R1_HighWaterB13_SW->setObjectName(QStringLiteral("lbl_R1_HighWaterB13_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R1_HighWaterB13_SW->sizePolicy().hasHeightForWidth());
-        lbl_R1_HighWaterB13_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R1_HighWaterB13_SW->sizePolicy().hasHeightForWidth());
+        lbl_R1_HighWaterB13_SW->setSizePolicy(sizePolicy2);
         lbl_R1_HighWaterB13_SW->setMinimumSize(QSize(0, 0));
         lbl_R1_HighWaterB13_SW->setMaximumSize(QSize(71, 60));
         lbl_R1_HighWaterB13_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1160,7 +1169,7 @@ public:
         label_SandDischargeValue1->setObjectName(QStringLiteral("label_SandDischargeValue1"));
         label_SandDischargeValue1->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1171,8 +1180,8 @@ public:
 
         lbl_R1_SandDrainPS1_SW = new QLabel(groupBox_2);
         lbl_R1_SandDrainPS1_SW->setObjectName(QStringLiteral("lbl_R1_SandDrainPS1_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R1_SandDrainPS1_SW->sizePolicy().hasHeightForWidth());
-        lbl_R1_SandDrainPS1_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R1_SandDrainPS1_SW->sizePolicy().hasHeightForWidth());
+        lbl_R1_SandDrainPS1_SW->setSizePolicy(sizePolicy2);
         lbl_R1_SandDrainPS1_SW->setMinimumSize(QSize(0, 0));
         lbl_R1_SandDrainPS1_SW->setMaximumSize(QSize(71, 60));
         lbl_R1_SandDrainPS1_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1197,7 +1206,7 @@ public:
         label_SofaValue1_5->setObjectName(QStringLiteral("label_SofaValue1_5"));
         label_SofaValue1_5->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1208,8 +1217,8 @@ public:
 
         lbl_R1_HighSandA1_SW = new QLabel(groupBox_2);
         lbl_R1_HighSandA1_SW->setObjectName(QStringLiteral("lbl_R1_HighSandA1_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R1_HighSandA1_SW->sizePolicy().hasHeightForWidth());
-        lbl_R1_HighSandA1_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R1_HighSandA1_SW->sizePolicy().hasHeightForWidth());
+        lbl_R1_HighSandA1_SW->setSizePolicy(sizePolicy2);
         lbl_R1_HighSandA1_SW->setMinimumSize(QSize(0, 0));
         lbl_R1_HighSandA1_SW->setMaximumSize(QSize(71, 60));
         lbl_R1_HighSandA1_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1228,7 +1237,7 @@ public:
         label_LowerAcidValue1->setObjectName(QStringLiteral("label_LowerAcidValue1"));
         label_LowerAcidValue1->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1239,8 +1248,8 @@ public:
 
         lbl_R1_LowAcidA13_SW = new QLabel(groupBox_2);
         lbl_R1_LowAcidA13_SW->setObjectName(QStringLiteral("lbl_R1_LowAcidA13_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R1_LowAcidA13_SW->sizePolicy().hasHeightForWidth());
-        lbl_R1_LowAcidA13_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R1_LowAcidA13_SW->sizePolicy().hasHeightForWidth());
+        lbl_R1_LowAcidA13_SW->setSizePolicy(sizePolicy2);
         lbl_R1_LowAcidA13_SW->setMinimumSize(QSize(0, 0));
         lbl_R1_LowAcidA13_SW->setMaximumSize(QSize(71, 60));
         lbl_R1_LowAcidA13_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1259,7 +1268,7 @@ public:
         label_LowerWaterValue1->setObjectName(QStringLiteral("label_LowerWaterValue1"));
         label_LowerWaterValue1->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1270,8 +1279,8 @@ public:
 
         lbl_R1_LowWaterB11_SW = new QLabel(groupBox_2);
         lbl_R1_LowWaterB11_SW->setObjectName(QStringLiteral("lbl_R1_LowWaterB11_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R1_LowWaterB11_SW->sizePolicy().hasHeightForWidth());
-        lbl_R1_LowWaterB11_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R1_LowWaterB11_SW->sizePolicy().hasHeightForWidth());
+        lbl_R1_LowWaterB11_SW->setSizePolicy(sizePolicy2);
         lbl_R1_LowWaterB11_SW->setMinimumSize(QSize(0, 0));
         lbl_R1_LowWaterB11_SW->setMaximumSize(QSize(71, 60));
         lbl_R1_LowWaterB11_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1290,7 +1299,7 @@ public:
         label_AcidDischargeValue1->setObjectName(QStringLiteral("label_AcidDischargeValue1"));
         label_AcidDischargeValue1->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1301,8 +1310,8 @@ public:
 
         lbl_R1_DrainAcidPS11_SW = new QLabel(groupBox_2);
         lbl_R1_DrainAcidPS11_SW->setObjectName(QStringLiteral("lbl_R1_DrainAcidPS11_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R1_DrainAcidPS11_SW->sizePolicy().hasHeightForWidth());
-        lbl_R1_DrainAcidPS11_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R1_DrainAcidPS11_SW->sizePolicy().hasHeightForWidth());
+        lbl_R1_DrainAcidPS11_SW->setSizePolicy(sizePolicy2);
         lbl_R1_DrainAcidPS11_SW->setMinimumSize(QSize(0, 0));
         lbl_R1_DrainAcidPS11_SW->setMaximumSize(QSize(71, 60));
         lbl_R1_DrainAcidPS11_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1330,7 +1339,7 @@ public:
 "    padding-top: 48px;           \n"
 "    font-weight: 500;     \n"
 "    background-color: rgb(0, 65, 140);\n"
-"    font-size: 38pt;\n"
+"    font-size: 58px;\n"
 "}\n"
 "\n"
 "QGroupBox::title {\n"
@@ -1357,7 +1366,7 @@ public:
         label_SofaValue1_2->setObjectName(QStringLiteral("label_SofaValue1_2"));
         label_SofaValue1_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1368,8 +1377,8 @@ public:
 
         lbl_R2_HighSandA2_SW = new QLabel(groupBox_3);
         lbl_R2_HighSandA2_SW->setObjectName(QStringLiteral("lbl_R2_HighSandA2_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R2_HighSandA2_SW->sizePolicy().hasHeightForWidth());
-        lbl_R2_HighSandA2_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R2_HighSandA2_SW->sizePolicy().hasHeightForWidth());
+        lbl_R2_HighSandA2_SW->setSizePolicy(sizePolicy2);
         lbl_R2_HighSandA2_SW->setMinimumSize(QSize(0, 0));
         lbl_R2_HighSandA2_SW->setMaximumSize(QSize(71, 60));
         lbl_R2_HighSandA2_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1388,7 +1397,7 @@ public:
         label_LowerAcidValue1_2->setObjectName(QStringLiteral("label_LowerAcidValue1_2"));
         label_LowerAcidValue1_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1399,8 +1408,8 @@ public:
 
         lbl_R2_LowAcidA23_SW = new QLabel(groupBox_3);
         lbl_R2_LowAcidA23_SW->setObjectName(QStringLiteral("lbl_R2_LowAcidA23_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R2_LowAcidA23_SW->sizePolicy().hasHeightForWidth());
-        lbl_R2_LowAcidA23_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R2_LowAcidA23_SW->sizePolicy().hasHeightForWidth());
+        lbl_R2_LowAcidA23_SW->setSizePolicy(sizePolicy2);
         lbl_R2_LowAcidA23_SW->setMinimumSize(QSize(0, 0));
         lbl_R2_LowAcidA23_SW->setMaximumSize(QSize(71, 60));
         lbl_R2_LowAcidA23_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1419,7 +1428,7 @@ public:
         label_LowerWaterValue1_2->setObjectName(QStringLiteral("label_LowerWaterValue1_2"));
         label_LowerWaterValue1_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1430,8 +1439,8 @@ public:
 
         lbl_R2_LowWaterB21_SW = new QLabel(groupBox_3);
         lbl_R2_LowWaterB21_SW->setObjectName(QStringLiteral("lbl_R2_LowWaterB21_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R2_LowWaterB21_SW->sizePolicy().hasHeightForWidth());
-        lbl_R2_LowWaterB21_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R2_LowWaterB21_SW->sizePolicy().hasHeightForWidth());
+        lbl_R2_LowWaterB21_SW->setSizePolicy(sizePolicy2);
         lbl_R2_LowWaterB21_SW->setMinimumSize(QSize(0, 0));
         lbl_R2_LowWaterB21_SW->setMaximumSize(QSize(71, 60));
         lbl_R2_LowWaterB21_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1450,7 +1459,7 @@ public:
         label_AcidDischargeValue1_2->setObjectName(QStringLiteral("label_AcidDischargeValue1_2"));
         label_AcidDischargeValue1_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1461,8 +1470,8 @@ public:
 
         lbl_R2_DrainAcidPS12_SW = new QLabel(groupBox_3);
         lbl_R2_DrainAcidPS12_SW->setObjectName(QStringLiteral("lbl_R2_DrainAcidPS12_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R2_DrainAcidPS12_SW->sizePolicy().hasHeightForWidth());
-        lbl_R2_DrainAcidPS12_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R2_DrainAcidPS12_SW->sizePolicy().hasHeightForWidth());
+        lbl_R2_DrainAcidPS12_SW->setSizePolicy(sizePolicy2);
         lbl_R2_DrainAcidPS12_SW->setMinimumSize(QSize(0, 0));
         lbl_R2_DrainAcidPS12_SW->setMaximumSize(QSize(71, 60));
         lbl_R2_DrainAcidPS12_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1487,7 +1496,7 @@ public:
         label_SofaValue1_7->setObjectName(QStringLiteral("label_SofaValue1_7"));
         label_SofaValue1_7->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1500,7 +1509,7 @@ public:
         label_acidWashTank2_Temperature->setObjectName(QStringLiteral("label_acidWashTank2_Temperature"));
         label_acidWashTank2_Temperature->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 44pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1520,7 +1529,7 @@ public:
         label_UpperAcidValue1_2->setObjectName(QStringLiteral("label_UpperAcidValue1_2"));
         label_UpperAcidValue1_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1531,8 +1540,8 @@ public:
 
         lbl_R2_HighAcidA22_SW = new QLabel(groupBox_3);
         lbl_R2_HighAcidA22_SW->setObjectName(QStringLiteral("lbl_R2_HighAcidA22_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R2_HighAcidA22_SW->sizePolicy().hasHeightForWidth());
-        lbl_R2_HighAcidA22_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R2_HighAcidA22_SW->sizePolicy().hasHeightForWidth());
+        lbl_R2_HighAcidA22_SW->setSizePolicy(sizePolicy2);
         lbl_R2_HighAcidA22_SW->setMinimumSize(QSize(0, 0));
         lbl_R2_HighAcidA22_SW->setMaximumSize(QSize(71, 60));
         lbl_R2_HighAcidA22_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1551,7 +1560,7 @@ public:
         label_UpperWaterValue1_2->setObjectName(QStringLiteral("label_UpperWaterValue1_2"));
         label_UpperWaterValue1_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1562,8 +1571,8 @@ public:
 
         lbl_R2_HighWaterB23_SW = new QLabel(groupBox_3);
         lbl_R2_HighWaterB23_SW->setObjectName(QStringLiteral("lbl_R2_HighWaterB23_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R2_HighWaterB23_SW->sizePolicy().hasHeightForWidth());
-        lbl_R2_HighWaterB23_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R2_HighWaterB23_SW->sizePolicy().hasHeightForWidth());
+        lbl_R2_HighWaterB23_SW->setSizePolicy(sizePolicy2);
         lbl_R2_HighWaterB23_SW->setMinimumSize(QSize(0, 0));
         lbl_R2_HighWaterB23_SW->setMaximumSize(QSize(71, 60));
         lbl_R2_HighWaterB23_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1582,7 +1591,7 @@ public:
         label_SandDischargeValue1_2->setObjectName(QStringLiteral("label_SandDischargeValue1_2"));
         label_SandDischargeValue1_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1593,8 +1602,8 @@ public:
 
         lbl_R2_SandDrainPS2_SW = new QLabel(groupBox_3);
         lbl_R2_SandDrainPS2_SW->setObjectName(QStringLiteral("lbl_R2_SandDrainPS2_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R2_SandDrainPS2_SW->sizePolicy().hasHeightForWidth());
-        lbl_R2_SandDrainPS2_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R2_SandDrainPS2_SW->sizePolicy().hasHeightForWidth());
+        lbl_R2_SandDrainPS2_SW->setSizePolicy(sizePolicy2);
         lbl_R2_SandDrainPS2_SW->setMinimumSize(QSize(0, 0));
         lbl_R2_SandDrainPS2_SW->setMaximumSize(QSize(71, 60));
         lbl_R2_SandDrainPS2_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1613,16 +1622,17 @@ public:
         horizontalLayout_24->addWidget(groupBox_3);
 
         stackedWidget->addWidget(page_2);
+        layoutWidget2->raise();
         tableWidget_RowSand->raise();
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
         tableWidget_Pickling = new QTableWidget(page_3);
         tableWidget_Pickling->setObjectName(QStringLiteral("tableWidget_Pickling"));
-        tableWidget_Pickling->setGeometry(QRect(0, 360, 1901, 691));
+        tableWidget_Pickling->setGeometry(QRect(0, 360, 1891, 691));
         tableWidget_Pickling->setStyleSheet(QStringLiteral(""));
         layoutWidget4 = new QWidget(page_3);
         layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(0, 0, 1901, 351));
+        layoutWidget4->setGeometry(QRect(0, 0, 1891, 341));
         horizontalLayout_21 = new QHBoxLayout(layoutWidget4);
         horizontalLayout_21->setSpacing(6);
         horizontalLayout_21->setContentsMargins(11, 11, 11, 11);
@@ -1630,7 +1640,7 @@ public:
         horizontalLayout_21->setContentsMargins(0, 0, 0, 0);
         groupBox_4 = new QGroupBox(layoutWidget4);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setMinimumSize(QSize(0, 170));
+        groupBox_4->setMinimumSize(QSize(0, 160));
         groupBox_4->setStyleSheet(QString::fromUtf8("QGroupBox {\n"
 "    border: 3px solid rgb(40, 105, 180);  /* \346\257\224\350\203\214\346\231\257\350\211\262\344\272\256\344\270\200\347\202\271\347\232\204\350\223\235\350\211\262\357\274\214\345\256\275\345\272\246\345\242\236\345\212\240 */\n"
 "    border-radius: 10px;\n"
@@ -1638,7 +1648,7 @@ public:
 "    padding-top: 48px;           \n"
 "    font-weight: 500;     \n"
 "    background-color: rgb(0, 65, 140);\n"
-"    font-size: 38pt;\n"
+"    font-size: 58px;\n"
 "}\n"
 "\n"
 "QGroupBox::title {\n"
@@ -1664,7 +1674,7 @@ public:
         label_SofaValue1_11->setObjectName(QStringLiteral("label_SofaValue1_11"));
         label_SofaValue1_11->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1677,7 +1687,7 @@ public:
         label_acidWashTank3_Temperature->setObjectName(QStringLiteral("label_acidWashTank3_Temperature"));
         label_acidWashTank3_Temperature->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 44pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1697,7 +1707,7 @@ public:
         label_UpperAcidValue1_3->setObjectName(QStringLiteral("label_UpperAcidValue1_3"));
         label_UpperAcidValue1_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1708,8 +1718,8 @@ public:
 
         lbl_R3_HighAcidA32_SW = new QLabel(groupBox_4);
         lbl_R3_HighAcidA32_SW->setObjectName(QStringLiteral("lbl_R3_HighAcidA32_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R3_HighAcidA32_SW->sizePolicy().hasHeightForWidth());
-        lbl_R3_HighAcidA32_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R3_HighAcidA32_SW->sizePolicy().hasHeightForWidth());
+        lbl_R3_HighAcidA32_SW->setSizePolicy(sizePolicy2);
         lbl_R3_HighAcidA32_SW->setMinimumSize(QSize(0, 0));
         lbl_R3_HighAcidA32_SW->setMaximumSize(QSize(71, 60));
         lbl_R3_HighAcidA32_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1728,7 +1738,7 @@ public:
         label_UpperWaterValue1_3->setObjectName(QStringLiteral("label_UpperWaterValue1_3"));
         label_UpperWaterValue1_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1739,8 +1749,8 @@ public:
 
         lbl_R3_HighWaterB33_SW = new QLabel(groupBox_4);
         lbl_R3_HighWaterB33_SW->setObjectName(QStringLiteral("lbl_R3_HighWaterB33_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R3_HighWaterB33_SW->sizePolicy().hasHeightForWidth());
-        lbl_R3_HighWaterB33_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R3_HighWaterB33_SW->sizePolicy().hasHeightForWidth());
+        lbl_R3_HighWaterB33_SW->setSizePolicy(sizePolicy2);
         lbl_R3_HighWaterB33_SW->setMinimumSize(QSize(0, 0));
         lbl_R3_HighWaterB33_SW->setMaximumSize(QSize(71, 60));
         lbl_R3_HighWaterB33_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1759,7 +1769,7 @@ public:
         label_SandDischargeValue1_3->setObjectName(QStringLiteral("label_SandDischargeValue1_3"));
         label_SandDischargeValue1_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1770,8 +1780,8 @@ public:
 
         lbl_R3_SandDrainPS3_SW = new QLabel(groupBox_4);
         lbl_R3_SandDrainPS3_SW->setObjectName(QStringLiteral("lbl_R3_SandDrainPS3_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R3_SandDrainPS3_SW->sizePolicy().hasHeightForWidth());
-        lbl_R3_SandDrainPS3_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R3_SandDrainPS3_SW->sizePolicy().hasHeightForWidth());
+        lbl_R3_SandDrainPS3_SW->setSizePolicy(sizePolicy2);
         lbl_R3_SandDrainPS3_SW->setMinimumSize(QSize(0, 0));
         lbl_R3_SandDrainPS3_SW->setMaximumSize(QSize(71, 60));
         lbl_R3_SandDrainPS3_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1796,7 +1806,7 @@ public:
         label_SofaValue1_3->setObjectName(QStringLiteral("label_SofaValue1_3"));
         label_SofaValue1_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1807,8 +1817,8 @@ public:
 
         lbl_R3_HighSandA3_SW = new QLabel(groupBox_4);
         lbl_R3_HighSandA3_SW->setObjectName(QStringLiteral("lbl_R3_HighSandA3_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R3_HighSandA3_SW->sizePolicy().hasHeightForWidth());
-        lbl_R3_HighSandA3_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R3_HighSandA3_SW->sizePolicy().hasHeightForWidth());
+        lbl_R3_HighSandA3_SW->setSizePolicy(sizePolicy2);
         lbl_R3_HighSandA3_SW->setMinimumSize(QSize(0, 0));
         lbl_R3_HighSandA3_SW->setMaximumSize(QSize(71, 60));
         lbl_R3_HighSandA3_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1827,7 +1837,7 @@ public:
         label_LowerAcidValue1_3->setObjectName(QStringLiteral("label_LowerAcidValue1_3"));
         label_LowerAcidValue1_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1838,8 +1848,8 @@ public:
 
         lbl_R3_LowAcidA33_SW = new QLabel(groupBox_4);
         lbl_R3_LowAcidA33_SW->setObjectName(QStringLiteral("lbl_R3_LowAcidA33_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R3_LowAcidA33_SW->sizePolicy().hasHeightForWidth());
-        lbl_R3_LowAcidA33_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R3_LowAcidA33_SW->sizePolicy().hasHeightForWidth());
+        lbl_R3_LowAcidA33_SW->setSizePolicy(sizePolicy2);
         lbl_R3_LowAcidA33_SW->setMinimumSize(QSize(0, 0));
         lbl_R3_LowAcidA33_SW->setMaximumSize(QSize(71, 60));
         lbl_R3_LowAcidA33_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1858,7 +1868,7 @@ public:
         label_LowerWaterValue1_3->setObjectName(QStringLiteral("label_LowerWaterValue1_3"));
         label_LowerWaterValue1_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1869,8 +1879,8 @@ public:
 
         lbl_R3_LowWaterB31_SW = new QLabel(groupBox_4);
         lbl_R3_LowWaterB31_SW->setObjectName(QStringLiteral("lbl_R3_LowWaterB31_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R3_LowWaterB31_SW->sizePolicy().hasHeightForWidth());
-        lbl_R3_LowWaterB31_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R3_LowWaterB31_SW->sizePolicy().hasHeightForWidth());
+        lbl_R3_LowWaterB31_SW->setSizePolicy(sizePolicy2);
         lbl_R3_LowWaterB31_SW->setMinimumSize(QSize(0, 0));
         lbl_R3_LowWaterB31_SW->setMaximumSize(QSize(71, 60));
         lbl_R3_LowWaterB31_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1889,7 +1899,7 @@ public:
         label_AcidDischargeValue1_3->setObjectName(QStringLiteral("label_AcidDischargeValue1_3"));
         label_AcidDischargeValue1_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1900,8 +1910,8 @@ public:
 
         lbl_R3_DrainAcidPS13_SW = new QLabel(groupBox_4);
         lbl_R3_DrainAcidPS13_SW->setObjectName(QStringLiteral("lbl_R3_DrainAcidPS13_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R3_DrainAcidPS13_SW->sizePolicy().hasHeightForWidth());
-        lbl_R3_DrainAcidPS13_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R3_DrainAcidPS13_SW->sizePolicy().hasHeightForWidth());
+        lbl_R3_DrainAcidPS13_SW->setSizePolicy(sizePolicy2);
         lbl_R3_DrainAcidPS13_SW->setMinimumSize(QSize(0, 0));
         lbl_R3_DrainAcidPS13_SW->setMaximumSize(QSize(71, 60));
         lbl_R3_DrainAcidPS13_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -1929,7 +1939,7 @@ public:
 "    padding-top: 48px;           \n"
 "    font-weight: 500;     \n"
 "    background-color: rgb(0, 65, 140);\n"
-"    font-size: 38pt;\n"
+"    font-size: 58px;\n"
 "}\n"
 "\n"
 "QGroupBox::title {\n"
@@ -1955,7 +1965,7 @@ public:
         label_SofaValue1_9->setObjectName(QStringLiteral("label_SofaValue1_9"));
         label_SofaValue1_9->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1968,7 +1978,7 @@ public:
         label_acidWashTank4_Temperature->setObjectName(QStringLiteral("label_acidWashTank4_Temperature"));
         label_acidWashTank4_Temperature->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family: 'Arial Narrow';\n"
-"    font-size: 44pt;\n"
+"    font-size: 52px;\n"
 "    font-weight: bold; /* <-- \346\267\273\345\212\240\350\277\231\344\270\200\350\241\214\346\235\245\350\256\276\347\275\256\345\212\240\347\262\227 */\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1988,7 +1998,7 @@ public:
         label_UpperAcidValue1_4->setObjectName(QStringLiteral("label_UpperAcidValue1_4"));
         label_UpperAcidValue1_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -1999,8 +2009,8 @@ public:
 
         lbl_R4_HighAcidA42_SW = new QLabel(groupBox_5);
         lbl_R4_HighAcidA42_SW->setObjectName(QStringLiteral("lbl_R4_HighAcidA42_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R4_HighAcidA42_SW->sizePolicy().hasHeightForWidth());
-        lbl_R4_HighAcidA42_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R4_HighAcidA42_SW->sizePolicy().hasHeightForWidth());
+        lbl_R4_HighAcidA42_SW->setSizePolicy(sizePolicy2);
         lbl_R4_HighAcidA42_SW->setMinimumSize(QSize(0, 0));
         lbl_R4_HighAcidA42_SW->setMaximumSize(QSize(71, 60));
         lbl_R4_HighAcidA42_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -2019,7 +2029,7 @@ public:
         label_UpperWaterValue1_4->setObjectName(QStringLiteral("label_UpperWaterValue1_4"));
         label_UpperWaterValue1_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -2030,8 +2040,8 @@ public:
 
         lbl_R4_HighWaterB43_SW = new QLabel(groupBox_5);
         lbl_R4_HighWaterB43_SW->setObjectName(QStringLiteral("lbl_R4_HighWaterB43_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R4_HighWaterB43_SW->sizePolicy().hasHeightForWidth());
-        lbl_R4_HighWaterB43_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R4_HighWaterB43_SW->sizePolicy().hasHeightForWidth());
+        lbl_R4_HighWaterB43_SW->setSizePolicy(sizePolicy2);
         lbl_R4_HighWaterB43_SW->setMinimumSize(QSize(0, 0));
         lbl_R4_HighWaterB43_SW->setMaximumSize(QSize(71, 60));
         lbl_R4_HighWaterB43_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -2050,7 +2060,7 @@ public:
         label_SandDischargeValue1_4->setObjectName(QStringLiteral("label_SandDischargeValue1_4"));
         label_SandDischargeValue1_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -2061,8 +2071,8 @@ public:
 
         lbl_R4_SandDrainPS4_SW = new QLabel(groupBox_5);
         lbl_R4_SandDrainPS4_SW->setObjectName(QStringLiteral("lbl_R4_SandDrainPS4_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R4_SandDrainPS4_SW->sizePolicy().hasHeightForWidth());
-        lbl_R4_SandDrainPS4_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R4_SandDrainPS4_SW->sizePolicy().hasHeightForWidth());
+        lbl_R4_SandDrainPS4_SW->setSizePolicy(sizePolicy2);
         lbl_R4_SandDrainPS4_SW->setMinimumSize(QSize(0, 0));
         lbl_R4_SandDrainPS4_SW->setMaximumSize(QSize(71, 60));
         lbl_R4_SandDrainPS4_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -2087,7 +2097,7 @@ public:
         label_SofaValue1_4->setObjectName(QStringLiteral("label_SofaValue1_4"));
         label_SofaValue1_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -2098,8 +2108,8 @@ public:
 
         lbl_R4_HighSandA4_SW = new QLabel(groupBox_5);
         lbl_R4_HighSandA4_SW->setObjectName(QStringLiteral("lbl_R4_HighSandA4_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R4_HighSandA4_SW->sizePolicy().hasHeightForWidth());
-        lbl_R4_HighSandA4_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R4_HighSandA4_SW->sizePolicy().hasHeightForWidth());
+        lbl_R4_HighSandA4_SW->setSizePolicy(sizePolicy2);
         lbl_R4_HighSandA4_SW->setMinimumSize(QSize(0, 0));
         lbl_R4_HighSandA4_SW->setMaximumSize(QSize(71, 60));
         lbl_R4_HighSandA4_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -2118,7 +2128,7 @@ public:
         label_LowerAcidValue1_4->setObjectName(QStringLiteral("label_LowerAcidValue1_4"));
         label_LowerAcidValue1_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -2129,8 +2139,8 @@ public:
 
         lbl_R4_LowAcidA43_SW = new QLabel(groupBox_5);
         lbl_R4_LowAcidA43_SW->setObjectName(QStringLiteral("lbl_R4_LowAcidA43_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R4_LowAcidA43_SW->sizePolicy().hasHeightForWidth());
-        lbl_R4_LowAcidA43_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R4_LowAcidA43_SW->sizePolicy().hasHeightForWidth());
+        lbl_R4_LowAcidA43_SW->setSizePolicy(sizePolicy2);
         lbl_R4_LowAcidA43_SW->setMinimumSize(QSize(0, 0));
         lbl_R4_LowAcidA43_SW->setMaximumSize(QSize(71, 60));
         lbl_R4_LowAcidA43_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -2149,7 +2159,7 @@ public:
         label_LowerWaterValue1_4->setObjectName(QStringLiteral("label_LowerWaterValue1_4"));
         label_LowerWaterValue1_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -2160,8 +2170,8 @@ public:
 
         lbl_R4_LowWaterB41_SW = new QLabel(groupBox_5);
         lbl_R4_LowWaterB41_SW->setObjectName(QStringLiteral("lbl_R4_LowWaterB41_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R4_LowWaterB41_SW->sizePolicy().hasHeightForWidth());
-        lbl_R4_LowWaterB41_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R4_LowWaterB41_SW->sizePolicy().hasHeightForWidth());
+        lbl_R4_LowWaterB41_SW->setSizePolicy(sizePolicy2);
         lbl_R4_LowWaterB41_SW->setMinimumSize(QSize(0, 0));
         lbl_R4_LowWaterB41_SW->setMaximumSize(QSize(71, 60));
         lbl_R4_LowWaterB41_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -2180,7 +2190,7 @@ public:
         label_AcidDischargeValue1_4->setObjectName(QStringLiteral("label_AcidDischargeValue1_4"));
         label_AcidDischargeValue1_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "    font-family:\"PingFang SC Medium\";\n"
-"    font-size:38pt;\n"
+"    font-size:47px;\n"
 "     font-weight: bold;\n"
 "    background:transparent;\n"
 "    color: white; /* <-- \344\277\256\346\224\271\350\277\231\351\207\214 */\n"
@@ -2191,8 +2201,8 @@ public:
 
         lbl_R4_DrainAcidPS14_SW = new QLabel(groupBox_5);
         lbl_R4_DrainAcidPS14_SW->setObjectName(QStringLiteral("lbl_R4_DrainAcidPS14_SW"));
-        sizePolicy1.setHeightForWidth(lbl_R4_DrainAcidPS14_SW->sizePolicy().hasHeightForWidth());
-        lbl_R4_DrainAcidPS14_SW->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lbl_R4_DrainAcidPS14_SW->sizePolicy().hasHeightForWidth());
+        lbl_R4_DrainAcidPS14_SW->setSizePolicy(sizePolicy2);
         lbl_R4_DrainAcidPS14_SW->setMinimumSize(QSize(0, 0));
         lbl_R4_DrainAcidPS14_SW->setMaximumSize(QSize(71, 60));
         lbl_R4_DrainAcidPS14_SW->setStyleSheet(QStringLiteral("background: transparent;"));
@@ -2211,11 +2221,14 @@ public:
         horizontalLayout_21->addWidget(groupBox_5);
 
         stackedWidget->addWidget(page_3);
+
+        gridLayout_10->addWidget(stackedWidget, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

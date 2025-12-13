@@ -308,20 +308,15 @@ bool MySQLDatabase::getLatestWeighRecords(QList<WeighRecordViewType> &records, i
         return false;
     }
 
-    QString sql = R"(
+    QSqlQuery query(m_db);
+    query.prepare(R"(
         SELECT *
-        FROM (
-            SELECT
-                *
-            FROM yujingui.weighrecordview
-            ORDER BY WeighTime DESC
-            LIMIT :limit
-        ) AS t
-        ORDER BY WeighTime ASC   -- 外层再翻回正序
-    )";
+        FROM `yujingui`.`weighrecordview`
+        ORDER BY `RunningNum` DESC
+        LIMIT :limit
+    )");
 
-    QSqlQuery query;
-    query.prepare(sql);
+
     query.bindValue(":limit", limit);   // int limit = 50 等
 
     if (!query.exec()) {

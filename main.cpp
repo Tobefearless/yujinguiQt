@@ -83,18 +83,21 @@ int main(int argc, char *argv[])
     qRegisterMetaType<QList<SensorData_Type>>();
     qRegisterMetaType<QList<WeighRecordViewType>>();
 
+    MainWindow w;
+    w.show();
+    return a.exec();
     // 获取所有屏幕并排序（使用 QScreen）
-    QList<QScreen*> screens = QApplication::screens();
-//    std::sort(screens.begin(), screens.end(), screenCompare);
+//    QList<QScreen*> screens = QApplication::screens();
+////    std::sort(screens.begin(), screens.end(), screenCompare);
 
-    // 检查是否有至少3个屏幕
-    if(screens.size() < 3) {
-        qWarning() << "需要至少3个屏幕，当前只有" << screens.size() << "个屏幕可用";
-        // 回退到单屏显示
-        MainWindow w;
-        w.show();
-        return a.exec();
-    }
+//    // 检查是否有至少3个屏幕
+//    if(screens.size() < 3) {
+//        qWarning() << "需要至少3个屏幕，当前只有" << screens.size() << "个屏幕可用";
+//        // 回退到单屏显示
+//        MainWindow w;
+//        w.show();
+//        return a.exec();
+//    }
 
     // 计算三屏拼接区域
 //    QRect videoWallRect;
@@ -122,21 +125,21 @@ int main(int argc, char *argv[])
 
     // 创建主窗口
 
-   DisTortMainWindow *mainWindow = new DisTortMainWindow;
+//   DisTortMainWindow *mainWindow = new DisTortMainWindow;
 
-   // 创建子窗口，并设置主窗口为父对象
-   DisTortSubWindow1 *subWindow1 = new DisTortSubWindow1(mainWindow); // 设置父对象
-   DistortsubWindow2 *subWindow2 = new DistortsubWindow2(mainWindow); // 设置父对象
+//   // 创建子窗口，并设置主窗口为父对象
+//   DisTortSubWindow1 *subWindow1 = new DisTortSubWindow1(mainWindow); // 设置父对象
+//   DistortsubWindow2 *subWindow2 = new DistortsubWindow2(mainWindow); // 设置父对象
 
-   // 移动到各自屏幕
-   mainWindow->move(screens[0]->geometry().topLeft());
-   subWindow1->move(screens[0]->geometry().topLeft());
-   subWindow2->move(screens[0]->geometry().topLeft());
+//   // 移动到各自屏幕
+//   mainWindow->move(screens[0]->geometry().topLeft());
+//   subWindow1->move(screens[0]->geometry().topLeft());
+//   subWindow2->move(screens[0]->geometry().topLeft());
 
-   // 显示窗口
-   mainWindow->show();
-   subWindow1->show();
-   subWindow2->show();
+//   // 显示窗口
+//   mainWindow->show();
+//   subWindow1->show();
+//   subWindow2->show();
 
 
     return a.exec();

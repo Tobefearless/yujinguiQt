@@ -8,19 +8,20 @@
 SpreadSheet::SpreadSheet()
 {
     int adjustmentRatio = 0;
-    RawSandlevel1Font = 24 -adjustmentRatio;
-    RawSandlevel2Font  = 18 - adjustmentRatio;
-    RawSandlevel3Font  = 14 - adjustmentRatio;
 
-    PickProduclevel1Font = 25 -adjustmentRatio;
-    PickProduclevel2Font  = 18 - adjustmentRatio;
-    PickProduclevel3Font  = 30 - adjustmentRatio;
+    RawSandlevel1Font = 32 -adjustmentRatio;
+    RawSandlevel2Font  = 24 - adjustmentRatio;
+    RawSandlevel3Font  = 20 - adjustmentRatio;
+
+    PickProduclevel1Font = 42 -adjustmentRatio;
+    PickProduclevel2Font  = 26 -adjustmentRatio;
+    PickProduclevel3Font  = 32 -adjustmentRatio;
 
     RawSandHeaderHeight = 30;
     RawSandContentHeight = 28;
 
-    PickProductHeaderHeight = 40;
-    PickProductContentHeight = 45;
+    PickProductHeaderHeight = 50;
+    PickProductContentHeight = 40;
 
     strench = 75;
 }
@@ -78,14 +79,18 @@ void SpreadSheet::initPickProductTable(QTableWidget *t)
 
     // ===== 恢复原始合并结构 =====
     t->setSpan(0, 0, 1, 20);
-    QFont font("Noto Sans", PickProduclevel1Font); // 减小字号确保显示
-    font.setHintingPreference(QFont::PreferNoHinting); // 避免中文笔画粘连
+    QFont font("Noto Sans"); // 减小字号确保显示
+    font.setPixelSize(PickProduclevel1Font);
+    font.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
+    font.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
     font.setStretch(strench);
+
 
     t->setItem(0, 0, getTableWidgetItem(font, Qt::AlignCenter, "渝津硅酸洗罐生产取样、成品排砂送样-分析明细表"));
 
     // 第一行：一级分类
-    QFont font1("Noto Sans", PickProduclevel2Font);
+    QFont font1("Noto Sans");
+    font1.setPixelSize(PickProduclevel2Font);
     font1.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
     font1.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
     font1.setStretch(strench);
@@ -96,7 +101,8 @@ void SpreadSheet::initPickProductTable(QTableWidget *t)
     t->setItem(1, 11, getTableWidgetItem(font1, Qt::AlignCenter, "成品排砂送样"));
 
     // 第二行：二级分类
-    QFont font2("Noto Sans", PickProduclevel2Font);
+    QFont font2("Noto Sans");
+    font2.setPixelSize(PickProduclevel2Font);
     font2.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
     font2.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
     font2.setStretch(strench);
@@ -142,7 +148,7 @@ void SpreadSheet::initPickProductTable(QTableWidget *t)
     t->setItem(3, 15, getTableWidgetItem(font2, Qt::AlignCenter, ">150目"));
 
     // 长文本处理：手动添加换行符
-    t->setItem(4, 13, getTableWidgetItem(font2, Qt::AlignCenter, "1-5粒合格/标准\n(不允许有)"));
+    t->setItem(4, 13, getTableWidgetItem(font2, Qt::AlignCenter, "1-10粒合格/标准\n(不允许有)"));
     t->setItem(4, 14, getTableWidgetItem(font2, Qt::AlignCenter, "合格标准 ≤8%"));
     t->setItem(4, 15, getTableWidgetItem(font2, Qt::AlignCenter, "合格标准 ≤5%"));
 
@@ -239,22 +245,25 @@ void SpreadSheet::initRawSandTable(QTableWidget *t)
 
     // ===== 恢复原始合并结构 =====
     t->setSpan(0, 0, 1, 16);
-    QFont font("Segoe UI", RawSandlevel1Font); // 减小字号确保显示
+    QFont font("Segoe UI"); // 减小字号确保显示
+    font.setPixelSize(RawSandlevel1Font);
     font.setHintingPreference(QFont::PreferNoHinting); // 避免中文笔画粘连
     font.setStretch(strench);
 
 
-    t->setItem(0, 0, getTableWidgetItem(font, Qt::AlignCenter, "重庆渝津硅水份、颗粒度、成份、酸洗试验分析检测明细表"));
+    t->setItem(0, 0, getTableWidgetItem(font, Qt::AlignCenter, "重庆渝津硅水分、颗粒度、成份、酸洗试验分析检测明细表"));
 
     // 第一行：一级分类
-    QFont font1("Segoe UI", RawSandlevel2Font);
+    QFont font1("Segoe UI");
+    font1.setPixelSize(RawSandlevel2Font);
     font1.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
     font1.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
     font1.setStretch(strench);
 
 
     // 第二行：二级分类
-    QFont font2("Segoe UI", RawSandlevel3Font);
+    QFont font2("Segoe UI");
+    font2.setPixelSize(RawSandlevel3Font);
     font2.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
     font2.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
     font2.setStretch(strench);
@@ -287,7 +296,7 @@ void SpreadSheet::initRawSandTable(QTableWidget *t)
     t->setItem(3, 5, getTableWidgetItem(font2, Qt::AlignCenter, "<25目"));
     t->setItem(3, 6, getTableWidgetItem(font2, Qt::AlignCenter, ">140目"));
 
-    t->setItem(4, 5, getTableWidgetItem(font2, Qt::AlignCenter, "1-5粒合格/\n标准(不允许有)"));
+    t->setItem(4, 5, getTableWidgetItem(font2, Qt::AlignCenter, "1-10粒合格/\n标准(不允许有)"));
     t->setItem(4, 6, getTableWidgetItem(font2, Qt::AlignCenter, "合格标准≤6%"));
 
     t->setSpan(1, 7, 2, 3);
@@ -387,13 +396,13 @@ QTableWidgetItem *SpreadSheet::getTableWidgetItem(QFont font, int alignment, QSt
 QTableWidgetItem *SpreadSheet::createCenteredItem(QString name)
 {
     QTableWidgetItem *item = new QTableWidgetItem(name);
-    QFont font1("宋体", 24);
-    font1.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
-    font1.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
+    QFont font1("Noto Sans");
+    font1.setPixelSize(32);
+//    font1.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
+//    font1.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
     font1.setStretch(strench);
     item->setFont(font1);
     item->setTextAlignment(Qt::AlignCenter);
-    item->setFont(font1);
     // 添加这一行来设置背景颜色为白色
     item->setBackground(QColor(Qt::white));
     return item;
@@ -472,6 +481,17 @@ QString SpreadSheet::formatByString(const QString &str)
       return parts[0] + "." + decimal;
 }
 
+// 把 "xx:xx" 转成 QTime，再格式化成 "hh:mm" 返回
+QString SpreadSheet::toHHmm(const QString &hmStr)
+{
+    // 用 "h:m" 解析，允许 1~2 位数字
+   QTime t = QTime::fromString(hmStr, "h:m");
+   if (!t.isValid())            // 解析失败返回空串，可按需改抛异常
+       return QString();
+
+   return t.toString("hh:mm");  // 保证输出两位小时、两位分钟
+}
+
 void SpreadSheet::fillMultiplePickedProducts(QTableWidget *t, const QList<pickedProduct_Type> &products)
 {
     int headerRow = 5;
@@ -502,9 +522,9 @@ void SpreadSheet::fillMultiplePickedProducts(QTableWidget *t, const QList<picked
         auto createCenteredItem = [this](const QString& text) -> QTableWidgetItem* {
             QTableWidgetItem *item = new QTableWidgetItem(text);
             QFont font2("Noto Sans");
-            font2.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
-            font2.setPointSize(PickProduclevel3Font);
-            font2.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
+//            font2.setHintingPreference(QFont::PreferFullHinting);  // 完整Hinting
+            font2.setPixelSize(PickProduclevel3Font);
+//            font2.setStyleHint(QFont::SansSerif);  // 确保使用无衬线字体
             font2.setStretch(strench);
             item->setFont(font2);
 
@@ -517,12 +537,12 @@ void SpreadSheet::fillMultiplePickedProducts(QTableWidget *t, const QList<picked
         t->setItem(dataRow, 0, createCenteredItem(product.picklingTankNumber));
         t->setItem(dataRow, 1, createCenteredItem(product.originalSandInjectionDate));
         t->setItem(dataRow, 2, createCenteredItem(product.proportionRawSand));
-        t->setItem(dataRow, 3, createCenteredItem(product.endTimeRaw));
+        t->setItem(dataRow, 3, createCenteredItem(toHHmm(product.endTimeRaw)));
 
 
         t->setItem(dataRow, 4, createCenteredItem(convertSamplingDateToString(product.samplingDate)));
 
-        t->setItem(dataRow, 5, createCenteredItem(product.samplingTime));
+        t->setItem(dataRow, 5, createCenteredItem(toHHmm(product.samplingTime)));
         t->setItem(dataRow, 6, createCenteredItem(product.productionSamplingTime));
         t->setItem(dataRow, 7, createCenteredItem(product.samplingTemperature));
 
@@ -533,7 +553,7 @@ void SpreadSheet::fillMultiplePickedProducts(QTableWidget *t, const QList<picked
 
         // 填充成品送样数据
         t->setItem(dataRow, 11, createCenteredItem(convertSamplingDateToString(product.finishedProductDate)));
-        t->setItem(dataRow, 12, createCenteredItem(product.finishedProductTime));
+        t->setItem(dataRow, 12, createCenteredItem(toHHmm(product.finishedProductTime)));
 
         // 填充颗粒度检测结果
         t->setItem(dataRow, 13, createCenteredItem(product.particleDetectionResults25));
@@ -565,8 +585,8 @@ void SpreadSheet::fillMultiplePickedProducts(QTableWidget *t, const QList<picked
             t->setColumnWidth(col,50);
         }
 
-        else if( (col == 8 || col == 9 || col == 10) && t->columnWidth(col) < 80){
-            t->setColumnWidth(col,80);
+        else if( (col == 8 || col == 9 || col == 10) && t->columnWidth(col) < 100){
+            t->setColumnWidth(col,100);
         }
 
         else if( col == 13 && t->columnWidth(col) < 135){
@@ -579,6 +599,10 @@ void SpreadSheet::fillMultiplePickedProducts(QTableWidget *t, const QList<picked
 
         else if( col == 15 && t->columnWidth(col) < 85){
             t->setColumnWidth(col,85);
+        }
+
+        else if( (col == 16 || col == 17)&& t->columnWidth(col) < 100){
+            t->setColumnWidth(col,100);
         }
 
     }
@@ -725,9 +749,17 @@ void SpreadSheet::fillRawInspectProducts(QTableWidget *t, const QList<RawInspect
 
 void SpreadSheet::initWeighRecordTable(QTableWidget *t)
 {
-        t->clear();
+
+        QStringList headers = {
+            "流水号", "车牌号", "业务类型",
+            "客户名称", "供应商", "产品名称",
+            "毛重", "皮重",  "净重",
+            "称重时间", "发货单位", "收货单位"
+        };
+
+       t->clear();
        t->setRowCount(1);  // 表头1行
-       t->setColumnCount(14);
+       t->setColumnCount(headers.length());
 
        // 隐藏默认表头
        t->horizontalHeader()->setVisible(false);
@@ -737,15 +769,18 @@ void SpreadSheet::initWeighRecordTable(QTableWidget *t)
 //       t->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
        t->horizontalHeader()->setStretchLastSection(true);
        // 设置字体和行高
-       QFont headerFont("Noto Sans", 20);
+       QFont headerFont("Noto Sans");
+       headerFont.setPixelSize(26);
        headerFont.setBold(true);
 
-       QStringList headers = {
-           "流水号", "车牌号", "司机", "业务类型",
-           "客户名称", "供应商", "产品名称",
-           "毛重", "皮重", "扣重", "净重",
-           "称重时间", "发货单位", "收货单位"
-       };
+//       QStringList headers = {
+//           "流水号", "车牌号", "司机", "业务类型",
+//           "客户名称", "供应商", "产品名称",
+//           "毛重", "皮重", "扣重", "净重",
+//           "称重时间", "发货单位", "收货单位"
+//       };
+
+
 
        // 填充表头
        for (int i = 0; i < headers.size(); ++i) {
@@ -789,7 +824,8 @@ void SpreadSheet::fillWeighRecordTable(QTableWidget *t, const QList<WeighRecordV
           // 创建数据项
           auto createDataItem = [this](const QString& text, bool isNumber = false) -> QTableWidgetItem* {
               QTableWidgetItem *item = new QTableWidgetItem(text);
-              QFont dataFont("Noto Sans", 16);
+              QFont dataFont("Noto Sans");
+              dataFont.setPixelSize(26);
 //              dataFont.setBold(true);
               dataFont.setStretch(strench);
               item->setFont(dataFont);
@@ -808,18 +844,18 @@ void SpreadSheet::fillWeighRecordTable(QTableWidget *t, const QList<WeighRecordV
           // 填充所有列
           t->setItem(row, 0, createDataItem(record.RunningNum));
           t->setItem(row, 1, createDataItem(record.Licenseplate));
-          t->setItem(row, 2, createDataItem(record.Driver));
-          t->setItem(row, 3, createDataItem(record.BusinessType));
-          t->setItem(row, 4, createDataItem(record.CustomerName));
-          t->setItem(row, 5, createDataItem(record.SupplierName));
-          t->setItem(row, 6, createDataItem(record.ProductName));
-          t->setItem(row, 7, createDataItem(QString::number(record.TotalWeight, 'f', 2), true));
-          t->setItem(row, 8, createDataItem(QString::number(record.Tare, 'f', 2), true));
-          t->setItem(row, 9, createDataItem(QString::number(record.Buckle, 'f', 2), true));
-          t->setItem(row, 10, createDataItem(QString::number(record.NeatWeight, 'f', 2), true));
-          t->setItem(row, 11, createDataItem(record.WeighTime.toString("hh:mm"))); // 简化时间显示
-          t->setItem(row, 12, createDataItem(record.SendcorpName));
-          t->setItem(row, 13, createDataItem(record.RecvcorpName));
+//          t->setItem(row, 2, createDataItem(record.Driver));
+          t->setItem(row, 2, createDataItem(record.BusinessType));
+          t->setItem(row, 3, createDataItem(record.CustomerName));
+          t->setItem(row, 4, createDataItem(record.SupplierName));
+          t->setItem(row, 5, createDataItem(record.ProductName));
+          t->setItem(row, 6, createDataItem(QString::number(record.TotalWeight, 'f', 2), true));
+          t->setItem(row, 7, createDataItem(QString::number(record.Tare, 'f', 2), true));
+//          t->setItem(row, 8, createDataItem(QString::number(record.Buckle, 'f', 1), true));
+          t->setItem(row, 8, createDataItem(QString::number(record.NeatWeight, 'f', 2), true));
+          t->setItem(row, 9, createDataItem(record.WeighTime.toString("hh:mm"))); // 简化时间显示
+          t->setItem(row, 10, createDataItem(record.SendcorpName));
+          t->setItem(row, 11, createDataItem(record.RecvcorpName));
 
           // 设置数据行高
           t->setRowHeight(row, 60);
@@ -840,19 +876,19 @@ void SpreadSheet::fillWeighRecordTable(QTableWidget *t, const QList<WeighRecordV
           if( col == 1  && t->columnWidth(col) < 110){
                t->setColumnWidth(col,110);
           }
-          else if( col == 2  && t->columnWidth(col) < 80){
-               t->setColumnWidth(col,80);
-          }
+//          else if( col == 2  && t->columnWidth(col) < 80){
+//               t->setColumnWidth(col,80);
+//          }
 
-          else if( col == 3  && t->columnWidth(col) < 135){
+          else if( col == 2  && t->columnWidth(col) < 135){
                t->setColumnWidth(col,150);
           }
 
-          else if( col == 9  && t->columnWidth(col) < 80){
-               t->setColumnWidth(col,80);
-          }
+//          else if( col == 8  && t->columnWidth(col) < 80){
+//               t->setColumnWidth(col,80);
+//          }
 
-          else if( col == 11  && t->columnWidth(col) < 135){
+          else if( col == 9  && t->columnWidth(col) < 135){
                t->setColumnWidth(col,140);
           }
       }
@@ -878,6 +914,16 @@ QString SpreadSheet::convertSamplingDateToString(const QString &originalDateStr,
       } else {
           return originalDateStr;
       }
+}
+
+QString toHHmm(const QString &hmStr)
+{
+    // 用 "h:m" 解析，允许 1~2 位数字
+    QTime t = QTime::fromString(hmStr, "h:m");
+    if (!t.isValid())            // 解析失败返回空串，可按需改抛异常
+        return QString();
+
+    return t.toString("hh:mm");  // 保证输出两位小时、两位分钟
 }
 
 
